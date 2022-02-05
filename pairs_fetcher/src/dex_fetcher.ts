@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import { PairContract, UniV2Factory, UniV2Pair } from "./contracts";
 
-abstract class Fetcher {
+abstract class DEXFetcher {
     private factoryContractCreate;
     private pairContractCreate;
 
@@ -88,7 +88,7 @@ abstract class Fetcher {
     }
 }
 
-export class FetcherUniV2 extends Fetcher {
+export class DEXFetcherUniV2 extends DEXFetcher {
     constructor(provider) {
         super(UniV2Factory, UniV2Pair, provider);
     }

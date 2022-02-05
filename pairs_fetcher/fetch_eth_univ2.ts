@@ -3,7 +3,7 @@ const fs = require("fs");
 
 import { program } from "commander";
 import { ethers } from "ethers";
-import { FetcherUniV2 } from "./src/fetcher"
+import { DEXFetcherUniV2 } from "./src/dex_fetcher"
 
 program.option('-c, --coins <path to json>', "Input path to coins json");
 program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_eth_univ2.json')
@@ -34,7 +34,7 @@ try {
 }
 
 (async () => {
-    let fetcher = new FetcherUniV2(provider)
+    let fetcher = new DEXFetcherUniV2(provider)
     if (coins) {
         console.log("Fetching pairs ...")
         pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
