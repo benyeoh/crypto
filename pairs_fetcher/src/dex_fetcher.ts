@@ -30,7 +30,7 @@ abstract class DEXFetcher {
         let token0Addr = (await pair.token0()).toLowerCase()
         let token1Addr = (await pair.token1()).toLowerCase()
         let { _reserve0, _reserve1, _blockTimestampLast } = await pair.getReserves()
-        
+
         if (token0Addr === pairInfo.token2.addr && token1Addr === pairInfo.token1.addr) {
             const tmpToken = pairInfo.token1;
             pairInfo.token1 = pairInfo.token2;
@@ -41,30 +41,30 @@ abstract class DEXFetcher {
             throw new Error(`Token addresses mismatch in pool. Got ${token0Addr} and ${token1Addr}.
                 Expecting ${pairInfo.token1.addr} and ${pairInfo.token2.addr}.`)
         }
-    
+
         pairInfo.token1Reserve = ethers.utils.formatUnits(_reserve0, pairInfo.token1.decimals);
         pairInfo.token2Reserve = ethers.utils.formatUnits(_reserve1, pairInfo.token2.decimals);
         pairInfo.timestamp = _blockTimestampLast;
-        
+
         this.updateRateParam(pairInfo, pair);
         return pairInfo;
     }
-    
+
     fetchPairs(coins, addr) {
         const factory = this.factoryContractCreate(addr)
-    
+
         let pairs = [];
         const entries = Object.entries(coins);
         for (let i = 0; i < entries.length; i++) {
             const [coinID1, coinProperty1] = entries[i];
-            const addr1 = coinProperty1["address"].ethereum?.toLowerCase();
-            if (!addr1) { 
+            const addr1 = coinProperty1["address"].toLowerCase();
+            if (!addr1) {
                 continue;
             }
-            
+
             for (let j = i + 1; j < entries.length; j++) {
                 const [coinID2, coinProperty2] = entries[j];
-                const addr2 = coinProperty2["address"].ethereum?.toLowerCase();
+                const addr2 = coinProperty2["address"].toLowerCase();
                 if (addr2) {
                     pairs.push(
                         factory.getPair(addr1, addr2).then((pairAddr) => {
@@ -78,13 +78,13 @@ abstract class DEXFetcher {
                 }
             }
         }
-        
+
         return Promise.all(pairs);
     }
 
     updatePairs(pairs) {
-        let filteredPairs = pairs.filter( (pair) => parseInt(pair["addr"]) !== 0 )
-        return Promise.all(Array.from(filteredPairs, (v, i) => this.updateParams(v) ))
+        let filteredPairs = pairs.filter((pair) => parseInt(pair["addr"]) !== 0)
+        return Promise.all(Array.from(filteredPairs, (v, i) => this.updateParams(v)))
     }
 }
 

@@ -1,5 +1,5 @@
 const FastPriorityQueue = require("fastpriorityqueue");
-import {Node, Edge, Graph} from "./graph";
+import { Node, Edge, Graph } from "./graph";
 
 class PathNode {
     prev: PathNode;
@@ -20,7 +20,7 @@ abstract class Traverser {
 
     }
 
-    abstract onTraverse(curPath: PathNode, toNode: Node, edge: Edge) : { cost: number, userData: any };
+    abstract onTraverse(curPath: PathNode, toNode: Node, edge: Edge): { cost: number, userData: any };
 
     traverse(graph: Graph, startNodeID: string) {
         if (!graph.nodes.has(startNodeID)) {
@@ -43,7 +43,7 @@ abstract class Traverser {
         while (!queue.isEmpty()) {
             let curPath: PathNode = queue.poll();
             for (let i = 0; i < curPath.node.edges.length; i++) {
-                let edge : Edge = curPath.node.edges[i];
+                let edge: Edge = curPath.node.edges[i];
                 let nextNode = edge.nodeA;
                 if (curPath.node === edge.nodeA) {
                     nextNode = edge.nodeB;
@@ -64,8 +64,8 @@ abstract class Traverser {
 
             }
         }
-        
-        this.onEndTraverse(graph, startNodeID);        
+
+        this.onEndTraverse(graph, startNodeID);
     }
 }
 
@@ -75,6 +75,9 @@ export class BFSCycleTraverser extends Traverser {
 
     constructor(maxDepth = 3) {
         super();
+        if (isNaN(maxDepth)) {
+            throw Error(`Invalid maxDepth: ${maxDepth}`);
+        }
         this.maxDepth = maxDepth;
     }
 
@@ -82,7 +85,7 @@ export class BFSCycleTraverser extends Traverser {
         this.paths = [];
     }
 
-    onTraverse(curPath: PathNode, toNode: Node, edge: Edge) : { cost: number, userData: any } {
+    onTraverse(curPath: PathNode, toNode: Node, edge: Edge): { cost: number, userData: any } {
         let startPath = curPath;
         while (startPath.prev !== null) {
             if (startPath.node === toNode || edge === startPath.edge) {
@@ -119,5 +122,5 @@ export class BFSCycleTraverser extends Traverser {
         return { cost: curPath.depth + 1, userData: null };
     }
 
-    
+
 }

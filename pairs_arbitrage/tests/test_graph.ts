@@ -67,8 +67,8 @@ const test_pairs = {
     ]
 }
 
-let g = new graph.Graph(); 
+let g = new graph.Graph();
 graph.updateGraphFromPairs(test_pairs, g);
-let cycleTraverser = new traverse.BFSCycleTraverser(); 
+let cycleTraverser = new traverse.BFSCycleTraverser();
 cycleTraverser.traverse(g, "USDC");
 console.log(JSON.stringify(cycleTraverser.paths, null, 4));

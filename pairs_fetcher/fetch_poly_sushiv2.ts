@@ -7,12 +7,12 @@ import { DEXFetcherUniV2 } from "./src/dex_fetcher"
 import { filterCoins } from "./src/utils";
 
 export async function fetch(coins, pairs, outPairsPath) {
-    const uniV2DEXFactoryAddr = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f';
-    const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/6bcbb57004284277a354afb84fddda50");
+    const uniV2DEXFactoryAddr = '0xc35DADB65012eC5796536bD9864eD8773aBc74C4';
+    const provider = new ethers.providers.JsonRpcProvider("https://polygon-mainnet.g.alchemy.com/v2/JHYlcNi99cWxxt5nvtmb1LR1qyITaYVT");//"https://polygon-rpc.com/");
 
     let fetcher = new DEXFetcherUniV2(provider)
     if (coins) {
-        coins = filterCoins(coins, "ethereum");
+        coins = filterCoins(coins, "polygon");
         console.log("Fetching pairs ...")
         pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
         console.log(pairs)
@@ -23,21 +23,21 @@ export async function fetch(coins, pairs, outPairsPath) {
     console.log(pairs.slice(-3));
 
     const outPairs = {
-        name: "Uniswap V2",
+        name: "SushiSwap V2",
         factory: uniV2DEXFactoryAddr,
-        network: "Ethereum",
+        network: "Polygon",
         pairs: pairs
     }
 
     fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
         err && console.log(err);
-        console.log(`Done: ${outPairsPath}. Num Pairs: ${outPairs.pairs.length}`)
+        console.log(`Done: ${outPairsPath}. Num Pairs: ${outPairs.pairs.length}`);
     });
 }
 
 if (require.main === module) {
     program.option('-c, --coins <path to json>', "Input path to coins json");
-    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_eth_univ2.json')
+    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_poly_sushiv2.json')
     program.parse()
     const options = program.opts()
 
@@ -46,7 +46,7 @@ if (require.main === module) {
         coins = options.coins !== undefined && JSON.parse(fs.readFileSync(options.coins, "utf8"));
     } catch (err) {
         if (err?.code === 'ENOENT') {
-            console.log(`Coins data file not found: ${options.coins}. Skipping coins fetch.`);
+            console.log(`Coins data file not found: ${options.coins}.Skipping coins fetch.`);
         } else {
             throw err;
         }

@@ -4,7 +4,7 @@ import * as cpmm from "../src/cpmm";
 
 function testSimpleSwapPath() {
     const test_path1 = [
-        
+
         {
             "node": {
                 "name": "USDC",
@@ -186,17 +186,30 @@ function testSimpleSwapPath() {
     let delta = model.computeDelta(1.0);
     console.log(`Delta 1: ${delta}`);
     assert(delta < 0 && Math.abs(delta - (-0.003846)) <= 0.001);
+    let optVol = model.computeOptimalVolume();
+    console.log(`Optimal Volume 1: ${optVol}`);
+    assert(Math.abs(optVol) < Math.abs(maxVol));
+    let befDelta = model.computeDelta(optVol - optVol * 0.1);
+    let optDelta = model.computeDelta(optVol);
+    let aftDelta = model.computeDelta(optVol + optVol * 0.1);
+    console.log(`Before 1: ${befDelta}, Opt 1: ${optDelta}, After 1: ${aftDelta}`);
+    assert(optDelta > befDelta && optDelta > aftDelta);
+
+    console.log("");
 
     model = new cpmm.CPMM(test_path2);
     swapPrice = model.computeSwapPrice();
     console.log(`Swap Price 2: ${swapPrice}`);
-    //assert(Math.abs(swapPrice - 0.996) <= 0.001);
     maxVol = model.computeMaxVolume();
     console.log(`Max Volume 2: ${maxVol}`);
-    //assert(Math.abs(maxVol - (-947.1522)) <= 0.001);
-    delta = model.computeDelta(1.0);
-    console.log(`Delta 2: ${delta}`);
-    //assert(delta < 0 && Math.abs(delta - (-0.003846)) <= 0.001);
+    optVol = model.computeOptimalVolume();
+    console.log(`Optimal Volume 2: ${optVol}`);
+    assert(Math.abs(optVol) < Math.abs(maxVol));
+    befDelta = model.computeDelta(optVol - optVol * 0.1);
+    optDelta = model.computeDelta(optVol);
+    aftDelta = model.computeDelta(optVol + optVol * 0.1);
+    console.log(`Before 2: ${befDelta}, Opt 2: ${optDelta}, After 2: ${aftDelta}`);
+    assert(optDelta > befDelta && optDelta > aftDelta);
 }
 
 testSimpleSwapPath();

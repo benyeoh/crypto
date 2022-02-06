@@ -7,12 +7,12 @@ import { DEXFetcherUniV2 } from "./src/dex_fetcher"
 import { filterCoins } from "./src/utils";
 
 export async function fetch(coins, pairs, outPairsPath) {
-    const uniV2DEXFactoryAddr = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f';
-    const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/6bcbb57004284277a354afb84fddda50");
+    const uniV2DEXFactoryAddr = '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3';
+    const provider = new ethers.providers.JsonRpcProvider("https://ftmrpc.ultimatenodes.io/");// "https://rpc.ftm.tools/");
 
     let fetcher = new DEXFetcherUniV2(provider)
     if (coins) {
-        coins = filterCoins(coins, "ethereum");
+        coins = filterCoins(coins, "fantom");
         console.log("Fetching pairs ...")
         pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
         console.log(pairs)
@@ -23,9 +23,9 @@ export async function fetch(coins, pairs, outPairsPath) {
     console.log(pairs.slice(-3));
 
     const outPairs = {
-        name: "Uniswap V2",
+        name: "SpookySwap V2",
         factory: uniV2DEXFactoryAddr,
-        network: "Ethereum",
+        network: "Fantom",
         pairs: pairs
     }
 
@@ -37,7 +37,7 @@ export async function fetch(coins, pairs, outPairsPath) {
 
 if (require.main === module) {
     program.option('-c, --coins <path to json>', "Input path to coins json");
-    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_eth_univ2.json')
+    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_ftm_spooky.json')
     program.parse()
     const options = program.opts()
 
@@ -46,7 +46,7 @@ if (require.main === module) {
         coins = options.coins !== undefined && JSON.parse(fs.readFileSync(options.coins, "utf8"));
     } catch (err) {
         if (err?.code === 'ENOENT') {
-            console.log(`Coins data file not found: ${options.coins}. Skipping coins fetch.`);
+            console.log(`Coins data file not found: ${options.coins}.Skipping coins fetch.`);
         } else {
             throw err;
         }

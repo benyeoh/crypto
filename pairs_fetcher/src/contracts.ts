@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 
 export abstract class FactoryContract {
-    abstract getPair(addr1: string, addr2: string): Promise<string>;    
+    abstract getPair(addr1: string, addr2: string): Promise<string>;
 }
 
 export abstract class PairContract {
