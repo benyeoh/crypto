@@ -8,15 +8,15 @@ export function fetch(coins, pairs, outPairsPath) {
     fetchUniV2(coins,
         pairs,
         outPairsPath,
-        '0xc35DADB65012eC5796536bD9864eD8773aBc74C4',
-        "https://rpc.ftm.tools/", //"https://ftmrpc.ultimatenodes.io/",
-        "Fantom",
-        "SushiSwap V2");
+        '0x745c475CC101cA5580eFf6F723976480881BC008',
+        "https://polygon-rpc.com/",
+        "Polygon",
+        "PlasmaSwap");
 }
 
 if (require.main === module) {
     program.option('-c, --coins <path to json>', "Input path to coins json");
-    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_ftm_sushiv2.json')
+    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_poly_quickv2.json')
     program.parse()
     const options = program.opts()
 

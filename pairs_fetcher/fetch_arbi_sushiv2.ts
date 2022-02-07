@@ -9,8 +9,8 @@ export function fetch(coins, pairs, outPairsPath) {
         pairs,
         outPairsPath,
         '0xc35DADB65012eC5796536bD9864eD8773aBc74C4',
-        "https://rpc.ftm.tools/", //"https://ftmrpc.ultimatenodes.io/",
-        "Fantom",
+        "https://arb1.arbitrum.io/rpc", // "https://rpc.ftm.tools/");
+        "Arbitrum",
         "SushiSwap V2");
 }
 

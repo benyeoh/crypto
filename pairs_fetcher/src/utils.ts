@@ -30,12 +30,12 @@ export async function fetchUniV2(coins: Object, pairs: any[], outPairsPath: stri
     let fetcher = new DEXFetcherUniV2(provider)
     if (coins) {
         coins = filterCoins(coins, network.toLowerCase());
-        console.log("Fetching pairs ...")
+        console.log(`Fetching pairs for ${dexName} at ${network}: ${rpcURL} ...`)
         pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
         // console.log(pairs)
     }
 
-    console.log("Fetching pair params ...")
+    console.log(`Updating params for ${dexName} at ${network}: ${rpcURL} ...`)
     pairs = await fetcher.updatePairs(pairs)
     console.log(pairs.slice(-3));
 

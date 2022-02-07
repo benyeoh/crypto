@@ -4,10 +4,12 @@ const path = require("path");
 
 import { program } from "commander";
 import * as ethUniV2 from "./fetch_eth_univ2";
-import * as ftmSpooky from "./fetch_ftm_spooky";
+import * as ftmSpooky from "./fetch_ftm_spookyv2";
 import * as ftmSushiV2 from "./fetch_ftm_sushiv2";
-import * as polyQuick from "./fetch_poly_quick";
+import * as polyQuick from "./fetch_poly_quickv2";
 import * as polySushiV2 from "./fetch_poly_sushiv2";
+import * as arbiSushiV2 from "./fetch_arbi_sushiv2";
+import * as polyPlasma from "./fetch_poly_plasmav2";
 
 function readPairs(pairsPath) {
     let pairs;
@@ -25,25 +27,52 @@ function readPairs(pairsPath) {
     return pairs;
 }
 
-async function fetch(coins, pairsDir, outPairsDir) {
-    let pairsPath = path.join(pairsDir, "pairs_ftm_spookyv2.json");
-    ftmSpooky.fetch(coins, readPairs(pairsPath), pairsPath);
+async function fetch(coins, pairsDir, outPairsDir, networks) {
 
-    pairsPath = path.join(pairsDir, "pairs_ftm_sushiv2.json");
-    ftmSushiV2.fetch(coins, readPairs(pairsPath), pairsPath);
+    let pairsPath, outPairsPath;
+    if (networks.includes("ftm")) {
+        let pairsPath = path.join(pairsDir, "pairs_ftm_spookyv2.json");
+        let outPairsPath = path.join(outPairsDir, "pairs_ftm_spookyv2.json");
+        ftmSpooky.fetch(coins, readPairs(pairsPath), pairsPath);
+    }
+    // pairsPath = path.join(pairsDir, "pairs_poly_plasmav2.json");
+    // outPairsPath = path.join(outPairsDir, "pairs_poly_plasmav2.json");
+    // polyPlasma.fetch(coins, readPairs(pairsPath), pairsPath);
 
-    pairsPath = path.join(pairsDir, "pairs_poly_quickv2.json");
-    polyQuick.fetch(coins, readPairs(pairsPath), pairsPath);
+    if (networks.includes("poly")) {
+        pairsPath = path.join(pairsDir, "pairs_poly_quickv2.json");
+        outPairsPath = path.join(outPairsDir, "pairs_poly_quickv2.json");
+        polyQuick.fetch(coins, readPairs(pairsPath), pairsPath);
+    }
 
-    pairsPath = path.join(pairsDir, "pairs_poly_sushiv2.json");
-    polySushiV2.fetch(coins, readPairs(pairsPath), pairsPath);
+    if (networks.includes("ftm")) {
+        pairsPath = path.join(pairsDir, "pairs_ftm_sushiv2.json");
+        outPairsPath = path.join(outPairsDir, "pairs_ftm_sushiv2.json");
+        ftmSushiV2.fetch(coins, readPairs(pairsPath), pairsPath);
+    }
 
-    pairsPath = path.join(pairsDir, "pairs_eth_univ2.json");
-    ethUniV2.fetch(coins, readPairs(pairsPath), pairsPath);
+    if (networks.includes("arbi")) {
+        pairsPath = path.join(pairsDir, "pairs_arbi_sushiv2.json");
+        outPairsPath = path.join(outPairsDir, "pairs_arbi_sushiv2.json");
+        arbiSushiV2.fetch(coins, readPairs(pairsPath), pairsPath);
+    }
+
+    if (networks.includes("poly")) {
+        pairsPath = path.join(pairsDir, "pairs_poly_sushiv2.json");
+        outPairsPath = path.join(outPairsDir, "pairs_poly_sushiv2.json");
+        polySushiV2.fetch(coins, readPairs(pairsPath), pairsPath);
+    }
+
+    if (networks.includes("eth")) {
+        pairsPath = path.join(pairsDir, "pairs_eth_univ2.json");
+        outPairsPath = path.join(outPairsDir, "pairs_eth_univ2.json");
+        ethUniV2.fetch(coins, readPairs(pairsPath), pairsPath);
+    }
 }
 
 program.option('-c, --coins <path to json>', "Input path to coins json");
 program.option('-p, --pairsDir <path to directory>', "Input/output directory to pairs data json", './')
+program.option('-n, --networks <comma delimted string>', "The networks/chains to look at. (poly, eth, ftm, arbi)", "poly,ftm,arbi")
 program.parse()
 const options = program.opts()
 
@@ -58,4 +87,4 @@ try {
     }
 }
 
-fetch(coins, options.pairsDir, options.pairsDir);
+fetch(coins, options.pairsDir, options.pairsDir, options.networks.split(","));
