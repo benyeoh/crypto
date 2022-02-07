@@ -2,37 +2,16 @@
 const fs = require("fs");
 
 import { program } from "commander";
-import { ethers } from "ethers";
-import { DEXFetcherUniV2 } from "./src/dex_fetcher"
-import { filterCoins } from "./src/utils";
+import { fetchUniV2 } from "./src/utils";
 
-export async function fetch(coins, pairs, outPairsPath) {
-    const uniV2DEXFactoryAddr = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f';
-    const provider = new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/6bcbb57004284277a354afb84fddda50");
-
-    let fetcher = new DEXFetcherUniV2(provider)
-    if (coins) {
-        coins = filterCoins(coins, "ethereum");
-        console.log("Fetching pairs ...")
-        pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
-        console.log(pairs)
-    }
-
-    console.log("Fetching pair params ...")
-    pairs = await fetcher.updatePairs(pairs)
-    console.log(pairs.slice(-3));
-
-    const outPairs = {
-        name: "Uniswap V2",
-        factory: uniV2DEXFactoryAddr,
-        network: "Ethereum",
-        pairs: pairs
-    }
-
-    fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
-        err && console.log(err);
-        console.log(`Done: ${outPairsPath}. Num Pairs: ${outPairs.pairs.length}`)
-    });
+export function fetch(coins, pairs, outPairsPath) {
+    fetchUniV2(coins,
+        pairs,
+        outPairsPath,
+        "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f",
+        "https://mainnet.infura.io/v3/6bcbb57004284277a354afb84fddda50",
+        "Ethereum",
+        "Uniswap V2");
 }
 
 if (require.main === module) {

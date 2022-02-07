@@ -27,21 +27,32 @@ abstract class DEXFetcher {
 
     private async updateParams(pairInfo) {
         const pair = this.pairContractCreate(pairInfo.addr);
-        let token0Addr = (await pair.token0()).toLowerCase()
-        let token1Addr = (await pair.token1()).toLowerCase()
-        let { _reserve0, _reserve1, _blockTimestampLast } = await pair.getReserves()
 
-        if (token0Addr === pairInfo.token2.addr && token1Addr === pairInfo.token1.addr) {
-            const tmpToken = pairInfo.token1;
-            pairInfo.token1 = pairInfo.token2;
-            pairInfo.token2 = tmpToken;
-            //pairInfo.token1Reserve = ethers.utils.formatUnits(_reserve1, pairInfo.token1.decimals);
-            //pairInfo.token2Reserve = ethers.utils.formatUnits(_reserve0, pairInfo.token2.decimals);
-        } else if (!(token0Addr === pairInfo.token1.addr && token1Addr === pairInfo.token2.addr)) {
-            throw new Error(`Token addresses mismatch in pool. Got ${token0Addr} and ${token1Addr}.
-                Expecting ${pairInfo.token1.addr} and ${pairInfo.token2.addr}.`)
+        if (!("token1Reserve" in pairInfo || "timestamp" in pairInfo)) {
+            let token0Addr = (await pair.token0()).toLowerCase()
+            // let token1Addr = (await pair.token1()).toLowerCase()
+
+            if (token0Addr === pairInfo.token2.addr) {
+                const tmpToken = pairInfo.token1;
+                pairInfo.token1 = pairInfo.token2;
+                pairInfo.token2 = tmpToken;
+                //pairInfo.token1Reserve = ethers.utils.formatUnits(_reserve1, pairInfo.token1.decimals);
+                //pairInfo.token2Reserve = ethers.utils.formatUnits(_reserve0, pairInfo.token2.decimals);
+            }
+
+            // if (token0Addr === pairInfo.token2.addr && token1Addr === pairInfo.token1.addr) {
+            //     const tmpToken = pairInfo.token1;
+            //     pairInfo.token1 = pairInfo.token2;
+            //     pairInfo.token2 = tmpToken;
+            //     //pairInfo.token1Reserve = ethers.utils.formatUnits(_reserve1, pairInfo.token1.decimals);
+            //     //pairInfo.token2Reserve = ethers.utils.formatUnits(_reserve0, pairInfo.token2.decimals);
+            // } else if (!(token0Addr === pairInfo.token1.addr && token1Addr === pairInfo.token2.addr)) {
+            //     throw new Error(`Token addresses mismatch in pool. Got ${token0Addr} and ${token1Addr}.
+            //         Expecting ${pairInfo.token1.addr} and ${pairInfo.token2.addr}.`)
+            // }
         }
 
+        let { _reserve0, _reserve1, _blockTimestampLast } = await pair.getReserves()
         pairInfo.token1Reserve = ethers.utils.formatUnits(_reserve0, pairInfo.token1.decimals);
         pairInfo.token2Reserve = ethers.utils.formatUnits(_reserve1, pairInfo.token2.decimals);
         pairInfo.timestamp = _blockTimestampLast;
@@ -99,3 +110,4 @@ export class DEXFetcherUniV2 extends DEXFetcher {
         pairInfo.rateB = 1.0
     }
 }
+

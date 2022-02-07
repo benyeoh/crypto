@@ -110,16 +110,10 @@
             "polygon": "0x6f7C932e7684666C9fd1d44527765433e01fF61d"
         }
     },
-    "LCX": {
+    "ADDY": {
         "decimals": 18,
         "address": {
-            "ethereum": "0x037a54aab062628c9bbae1fdb1583c195585fe41"
-        }
-    },
-    "REVV": {
-        "decimals": 18,
-        "address": {
-            "ethereum": "0x557B933a7C2c45672B610F8954A3deB39a51A8Ca"
+            "polygon": "0xc3fdbadc7c795ef1d6ba111e06ff8f16a20ea539"
         }
     },
     "CRV": {

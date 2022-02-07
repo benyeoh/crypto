@@ -3,8 +3,6 @@ const fs = require("fs");
 const path = require("path");
 
 import { program } from "commander";
-import { ethers } from "ethers";
-import { DEXFetcherUniV2 } from "./src/dex_fetcher";
 import * as ethUniV2 from "./fetch_eth_univ2";
 import * as ftmSpooky from "./fetch_ftm_spooky";
 import * as ftmSushiV2 from "./fetch_ftm_sushiv2";
@@ -28,13 +26,13 @@ function readPairs(pairsPath) {
 }
 
 async function fetch(coins, pairsDir, outPairsDir) {
-    let pairsPath = path.join(pairsDir, "pairs_ftm_spooky.json");
+    let pairsPath = path.join(pairsDir, "pairs_ftm_spookyv2.json");
     ftmSpooky.fetch(coins, readPairs(pairsPath), pairsPath);
 
     pairsPath = path.join(pairsDir, "pairs_ftm_sushiv2.json");
     ftmSushiV2.fetch(coins, readPairs(pairsPath), pairsPath);
 
-    pairsPath = path.join(pairsDir, "pairs_poly_quick.json");
+    pairsPath = path.join(pairsDir, "pairs_poly_quickv2.json");
     polyQuick.fetch(coins, readPairs(pairsPath), pairsPath);
 
     pairsPath = path.join(pairsDir, "pairs_poly_sushiv2.json");

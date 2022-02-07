@@ -2,37 +2,16 @@
 const fs = require("fs");
 
 import { program } from "commander";
-import { ethers } from "ethers";
-import { DEXFetcherUniV2 } from "./src/dex_fetcher"
-import { filterCoins } from "./src/utils";
+import { fetchUniV2 } from "./src/utils";
 
-export async function fetch(coins, pairs, outPairsPath) {
-    const uniV2DEXFactoryAddr = '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3';
-    const provider = new ethers.providers.JsonRpcProvider("https://ftmrpc.ultimatenodes.io/");// "https://rpc.ftm.tools/");
-
-    let fetcher = new DEXFetcherUniV2(provider)
-    if (coins) {
-        coins = filterCoins(coins, "fantom");
-        console.log("Fetching pairs ...")
-        pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
-        console.log(pairs)
-    }
-
-    console.log("Fetching pair params ...")
-    pairs = await fetcher.updatePairs(pairs)
-    console.log(pairs.slice(-3));
-
-    const outPairs = {
-        name: "SpookySwap V2",
-        factory: uniV2DEXFactoryAddr,
-        network: "Fantom",
-        pairs: pairs
-    }
-
-    fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
-        err && console.log(err);
-        console.log(`Done: ${outPairsPath}. Num Pairs: ${outPairs.pairs.length}`)
-    });
+export function fetch(coins, pairs, outPairsPath) {
+    fetchUniV2(coins,
+        pairs,
+        outPairsPath,
+        '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3',
+        "https://ftmrpc.ultimatenodes.io/", // "https://rpc.ftm.tools/");
+        "Fantom",
+        "SpookySwap V2");
 }
 
 if (require.main === module) {

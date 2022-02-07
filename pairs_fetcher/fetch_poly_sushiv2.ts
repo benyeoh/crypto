@@ -2,37 +2,16 @@
 const fs = require("fs");
 
 import { program } from "commander";
-import { ethers } from "ethers";
-import { DEXFetcherUniV2 } from "./src/dex_fetcher"
-import { filterCoins } from "./src/utils";
+import { fetchUniV2 } from "./src/utils";
 
-export async function fetch(coins, pairs, outPairsPath) {
-    const uniV2DEXFactoryAddr = '0xc35DADB65012eC5796536bD9864eD8773aBc74C4';
-    const provider = new ethers.providers.JsonRpcProvider("https://polygon-mainnet.g.alchemy.com/v2/JHYlcNi99cWxxt5nvtmb1LR1qyITaYVT");//"https://polygon-rpc.com/");
-
-    let fetcher = new DEXFetcherUniV2(provider)
-    if (coins) {
-        coins = filterCoins(coins, "polygon");
-        console.log("Fetching pairs ...")
-        pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
-        console.log(pairs)
-    }
-
-    console.log("Fetching pair params ...")
-    pairs = await fetcher.updatePairs(pairs)
-    console.log(pairs.slice(-3));
-
-    const outPairs = {
-        name: "SushiSwap V2",
-        factory: uniV2DEXFactoryAddr,
-        network: "Polygon",
-        pairs: pairs
-    }
-
-    fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
-        err && console.log(err);
-        console.log(`Done: ${outPairsPath}. Num Pairs: ${outPairs.pairs.length}`);
-    });
+export function fetch(coins, pairs, outPairsPath) {
+    fetchUniV2(coins,
+        pairs,
+        outPairsPath,
+        '0xc35DADB65012eC5796536bD9864eD8773aBc74C4',
+        "https://polygon-mainnet.g.alchemy.com/v2/JHYlcNi99cWxxt5nvtmb1LR1qyITaYVT", // "https://polygon-rpc.com/");
+        "Polygon",
+        "SushiSwap V2");
 }
 
 if (require.main === module) {

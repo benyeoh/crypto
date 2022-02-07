@@ -11,6 +11,7 @@ import * as traverse from "./src/traverse";
 program.requiredOption('-p, --pairs <path to json>', "Input path to pairs data json. Accepts >1 files with wildcards.");
 program.option('-c, --coin <string>', "Name of the coin to find trades. Default is USDC.", "USDC");
 program.option('-l, --maxPathLen <number>', "Maximum path length for trades. Default is 3.", "3");
+program.option('-n, --topNumPaths <number>', "Filters in only top n paths. Default is 10.", "10");
 program.option('-d, --minDelta <number>', "Minimum delta to consider at the optimal trade volume. Default is 0.", "0");
 program.option('-k, --minLiquidity <number>', "Minimum effective liquidity to consider for trades volume. Default is 0.", "0");
 program.option('-o, --output <path to json>', "Output filepath to save trade path.");
@@ -57,11 +58,11 @@ for (let i = 0; i < paths.length; i++) {
 
 // Sort according to ascending delta
 profitPaths.sort((a, b) => a.optimalDelta - b.optimalDelta);
-console.log(JSON.stringify(profitPaths.slice(-3), null, 4));
+console.log(JSON.stringify(profitPaths.slice(-1), null, 4));
 
 if (options.output) {
     console.log(`Writing to: ${options.output}`);
-    fs.writeFileSync(options.output, JSON.stringify(profitPaths, null, 4), "utf8");
+    fs.writeFileSync(options.output, JSON.stringify(profitPaths.slice(-parseInt(options.topNumPaths)), null, 4), "utf8");
 }
 
 console.log(`Number of +ve delta paths vs total: ${profitPaths.length} / ${paths.length}`);
