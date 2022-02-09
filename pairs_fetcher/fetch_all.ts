@@ -94,4 +94,4 @@ try {
     }
 }
 
-fetch(coins, options.pairsDir, options.pairsDir, options.networks.split(","));
+fetch(coins, options.pairsDir, options.pairsDir, options.networks.split(",")).then(() => { console.log("\nDone fetching!\n"); })

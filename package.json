@@ -8,5 +8,15 @@
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
     "ethers": "^5.5.4"
+  },
+  "scripts": {
+    "compile_fetcher": "tsc pairs_fetcher/fetch_all.ts",
+    "compile_arbitrage": "tsc pairs_arbitrage/find_trades.ts",
+    "fetch": "node pairs_fetcher/fetch_all.js -c ./coins.json -p ./",
+    "update_only": "node pairs_fetcher/fetch_all.js -p ./",
+    "arbitrage": "node pairs_arbitrage/find_trades.js"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.16"
   }
 }
