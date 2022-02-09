@@ -81,8 +81,18 @@ abstract class DEXFetcher {
                         factory.getPair(addr1, addr2).then((pairAddr) => {
                             return {
                                 addr: pairAddr,
-                                token1: { name: coinID1, addr: addr1, decimals: coinProperty1["decimals"] },
-                                token2: { name: coinID2, addr: addr2, decimals: coinProperty2["decimals"] },
+                                token1: {
+                                    name: coinID1,
+                                    addr: addr1,
+                                    decimals: coinProperty1["decimals"],
+                                    peg: coinProperty1["peg"] ? coinProperty1["peg"] : null
+                                },
+                                token2: {
+                                    name: coinID2,
+                                    addr: addr2,
+                                    decimals: coinProperty2["decimals"],
+                                    peg: coinProperty2["peg"] ? coinProperty2["peg"] : null
+                                },
                             }
                         })
                     );

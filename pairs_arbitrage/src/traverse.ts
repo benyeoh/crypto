@@ -95,7 +95,8 @@ export class BFSCycleTraverser extends Traverser {
             startPath = startPath.prev;
         }
 
-        if (startPath.node === toNode) {
+        if ((startPath.node === toNode) ||
+            (startPath.node.data.peg !== null && toNode.data.peg !== null && startPath.node.data.peg === toNode.data.peg)) {
             if (curPath.depth !== 0) {
                 // Store valid path
                 let flattenedPath = [];

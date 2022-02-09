@@ -34,7 +34,7 @@ export function updateGraphFromPairs(pairsInfo, graph: Graph) {
             let nodeB: Node = nodes.get(pair["token2"].name);
             if (!nodeA) {
                 nodeA = {
-                    data: { name: pair["token1"].name },
+                    data: { name: pair["token1"].name, peg: pair["token1"].peg },
                     edges: new Array<Edge>()
                 };
                 nodes.set(pair["token1"].name, nodeA);
@@ -42,7 +42,7 @@ export function updateGraphFromPairs(pairsInfo, graph: Graph) {
 
             if (!nodeB) {
                 nodeB = {
-                    data: { name: pair["token2"].name },
+                    data: { name: pair["token2"].name, peg: pair["token2"].peg },
                     edges: new Array<Edge>()
                 };
                 nodes.set(pair["token2"].name, nodeB);

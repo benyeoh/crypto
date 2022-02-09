@@ -1,4 +1,4 @@
-#!/usr/bin/env -S npx ts-node
+#!/usr/bin / env - S npx ts - node
 const fs = require("fs");
 
 import { program } from "commander";
@@ -8,15 +8,15 @@ export function fetch(coins, pairs, outPairsPath) {
     fetchUniV2(coins,
         pairs,
         outPairsPath,
-        '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3',
-        "https://rpc.ftm.tools/",
-        "Fantom",
-        "SpookySwap V2");
+        '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
+        "https://bsc-dataseed1.defibit.io/",
+        "BinanceSC",
+        "PancakeSwap V2");
 }
 
 if (require.main === module) {
     program.option('-c, --coins <path to json>', "Input path to coins json");
-    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_ftm_spooky.json')
+    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_poly_quickv2.json')
     program.parse()
     const options = program.opts()
 
@@ -25,7 +25,7 @@ if (require.main === module) {
         coins = options.coins !== undefined && JSON.parse(fs.readFileSync(options.coins, "utf8"));
     } catch (err) {
         if (err?.code === 'ENOENT') {
-            console.log(`Coins data file not found: ${options.coins}.Skipping coins fetch.`);
+            console.log(`Coins data file not found: ${options.coins}. Skipping coins fetch.`);
         } else {
             throw err;
         }

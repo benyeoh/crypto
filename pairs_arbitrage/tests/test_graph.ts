@@ -13,12 +13,14 @@ const test_pairs = {
             "token1": {
                 "name": "USDC",
                 "addr": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-                "decimals": 6
+                "decimals": 6,
+                "peg": null
             },
             "token2": {
                 "name": "ETH",
                 "addr": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-                "decimals": 18
+                "decimals": 18,
+                "peg": null
             },
             "token1Reserve": "107882978.172857",
             "token2Reserve": "41492.995329546261157873",
@@ -32,12 +34,14 @@ const test_pairs = {
             "token1": {
                 "name": "BTC",
                 "addr": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-                "decimals": 8
+                "decimals": 8,
+                "peg": null
             },
             "token2": {
                 "name": "ETH",
                 "addr": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
-                "decimals": 18
+                "decimals": 18,
+                "peg": null
             },
             "token1Reserve": "398.97628411",
             "token2Reserve": "5581.183277624102682414",
@@ -51,12 +55,14 @@ const test_pairs = {
             "token1": {
                 "name": "BTC",
                 "addr": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
-                "decimals": 8
+                "decimals": 8,
+                "peg": null
             },
             "token2": {
                 "name": "USDC",
                 "addr": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
-                "decimals": 6
+                "decimals": 6,
+                "peg": null
             },
             "token1Reserve": "6.84848333",
             "token2Reserve": "250377.037837",
