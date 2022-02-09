@@ -31,10 +31,11 @@ function readPairs(pairsPath) {
 async function fetch(coins, pairsDir, outPairsDir, networks) {
 
     let pairsPath, outPairsPath;
+    let promises = [];
     if (networks.includes("ftm")) {
         let pairsPath = path.join(pairsDir, "pairs_ftm_spookyv2.json");
         let outPairsPath = path.join(outPairsDir, "pairs_ftm_spookyv2.json");
-        ftmSpooky.fetch(coins, readPairs(pairsPath), outPairsPath);
+        promises.push(ftmSpooky.fetch(coins, readPairs(pairsPath), outPairsPath));
     }
     // pairsPath = path.join(pairsDir, "pairs_poly_plasmav2.json");
     // outPairsPath = path.join(outPairsDir, "pairs_poly_plasmav2.json");
@@ -43,38 +44,40 @@ async function fetch(coins, pairsDir, outPairsDir, networks) {
     if (networks.includes("poly")) {
         pairsPath = path.join(pairsDir, "pairs_poly_quickv2.json");
         outPairsPath = path.join(outPairsDir, "pairs_poly_quickv2.json");
-        polyQuick.fetch(coins, readPairs(pairsPath), outPairsPath);
+        promises.push(polyQuick.fetch(coins, readPairs(pairsPath), outPairsPath));
     }
 
     if (networks.includes("ftm")) {
         pairsPath = path.join(pairsDir, "pairs_ftm_sushiv2.json");
         outPairsPath = path.join(outPairsDir, "pairs_ftm_sushiv2.json");
-        ftmSushiV2.fetch(coins, readPairs(pairsPath), outPairsPath);
+        promises.push(ftmSushiV2.fetch(coins, readPairs(pairsPath), outPairsPath));
     }
 
     if (networks.includes("bsc")) {
         pairsPath = path.join(pairsDir, "pairs_bsc_pancakev2.json");
         outPairsPath = path.join(outPairsDir, "pairs_bsc_pancakev2.json");
-        bscPancakeV2.fetch(coins, readPairs(pairsPath), outPairsPath);
+        promises.push(bscPancakeV2.fetch(coins, readPairs(pairsPath), outPairsPath));
     }
 
     if (networks.includes("arbi")) {
         pairsPath = path.join(pairsDir, "pairs_arbi_sushiv2.json");
         outPairsPath = path.join(outPairsDir, "pairs_arbi_sushiv2.json");
-        arbiSushiV2.fetch(coins, readPairs(pairsPath), outPairsPath);
+        promises.push(arbiSushiV2.fetch(coins, readPairs(pairsPath), outPairsPath));
     }
 
     if (networks.includes("poly")) {
         pairsPath = path.join(pairsDir, "pairs_poly_sushiv2.json");
         outPairsPath = path.join(outPairsDir, "pairs_poly_sushiv2.json");
-        polySushiV2.fetch(coins, readPairs(pairsPath), outPairsPath);
+        promises.push(polySushiV2.fetch(coins, readPairs(pairsPath), outPairsPath));
     }
 
     if (networks.includes("eth")) {
         pairsPath = path.join(pairsDir, "pairs_eth_univ2.json");
         outPairsPath = path.join(outPairsDir, "pairs_eth_univ2.json");
-        ethUniV2.fetch(coins, readPairs(pairsPath), outPairsPath);
+        promises.push(ethUniV2.fetch(coins, readPairs(pairsPath), outPairsPath));
     }
+
+    return await Promise.all(promises);
 }
 
 program.option('-c, --coins <path to json>', "Input path to coins json");

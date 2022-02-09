@@ -5,7 +5,7 @@ import { program } from "commander";
 import { fetchUniV2 } from "./src/utils";
 
 export function fetch(coins, pairs, outPairsPath) {
-    fetchUniV2(coins,
+    return fetchUniV2(coins,
         pairs,
         outPairsPath,
         '0x745c475CC101cA5580eFf6F723976480881BC008',

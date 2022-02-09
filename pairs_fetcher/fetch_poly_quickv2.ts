@@ -5,11 +5,11 @@ import { program } from "commander";
 import { fetchUniV2 } from "./src/utils";
 
 export function fetch(coins, pairs, outPairsPath) {
-    fetchUniV2(coins,
+    return fetchUniV2(coins,
         pairs,
         outPairsPath,
         '0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32',
-        "https://polygon-mainnet.g.alchemy.com/v2/JHYlcNi99cWxxt5nvtmb1LR1qyITaYVT", // "https://polygon-rpc.com/");
+        "https://polygon-rpc.com/",
         "Polygon",
         "QuickSwap V2");
 }

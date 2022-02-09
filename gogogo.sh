@@ -10,8 +10,9 @@ networks_flag=
 output_dir=$DIR
 target_coins="USDC,ETH"
 trades_filter="*"
+minimum_liquidity=
 
-while getopts "o:c:t:l:n:f:" opt; do
+while getopts "o:c:t:l:n:f:k:" opt; do
     case ${opt} in
         c ) if [[ ${OPTARG} = /* ]]; then
                 coin_flag="-c ${OPTARG}"
@@ -33,6 +34,8 @@ while getopts "o:c:t:l:n:f:" opt; do
             ;;
         n ) networks_flag="-n ${OPTARG}"
             ;;
+        k ) minimum_liquidity="-k ${OPTARG}"
+            ;;
         \? ) echo "Invalid option: -${OPTARG}\n"
             exit 1
             ;;
@@ -50,7 +53,8 @@ pushd $DIR/pairs_arbitrage > /dev/null
 for target in "${targets[@]}"
 do
     target_lower=$(echo "$target" | awk '{print tolower($0)}')
-    ./find_trades.ts -p "$output_dir/pairs_${trades_filter}.json" $path_len_flag -c $target -o $output_dir/paths_${target_lower}.json &
+    echo ./find_trades.ts -p "$output_dir/pairs_${trades_filter}.json" $path_len_flag -c $target -o $output_dir/paths_${target_lower}.json ${minimum_liquidity} 
+    ./find_trades.ts -p "$output_dir/pairs_${trades_filter}.json" $path_len_flag -c $target -o $output_dir/paths_${target_lower}.json ${minimum_liquidity}
 done
 
 # Wait until finish
