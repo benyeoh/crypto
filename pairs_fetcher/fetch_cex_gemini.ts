@@ -15,10 +15,14 @@ ws.on("open", () => {
 });
 
 ws.on("message", (msg) => {
-    //ws.close();
+    ws.close();
     let data = JSON.parse(msg);
     if (data.trades !== undefined) {
-        console.log(`On message: ${data.type}, ${JSON.stringify(data.trades, null, 4)}`);
+        console.log(`On message: ${data.type}, ${JSON.stringify([data.trades[0], data.trades[1]], null, 4)}`);
     }
     //ws.close();
 });
+
+ws.on("close", (msg) => {
+    console.log("On close");
+});``
