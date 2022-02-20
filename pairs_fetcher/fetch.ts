@@ -39,60 +39,23 @@ export const NAME_TO_EXCHANGE_MAP = {
     "eth": [ethUniV2]
 }
 
-export async function fetch(coins, pairsOrDir, outPairsDir, networks) {
+export function fetchOne(module, coins, pairsOrDir, outPairsDir) {
+    let pairs = typeof (pairsOrDir) === "string" ? readPairs(path.join(pairsOrDir, module.DEF_PAIRS_PATH)) : pairsOrDir[module.DEX_NAME + "/" + module.NET_NAME]?.pairs;
+    let outPairsPath = outPairsDir ? path.join(outPairsDir, module.DEF_PAIRS_PATH) : null;
+    return module.fetch(coins, pairs, outPairsPath);
+}
 
-    function fetch_one(module) {
-        let pairs = typeof (pairsOrDir) === "string" ? readPairs(path.join(pairsOrDir, module.DEF_PAIRS_PATH)) : pairsOrDir[module.DEX_NAME + "/" + module.NET_NAME]?.pairs;
-        // console.log(pairsOrDir);
-        // console.log(pairs);
-        let outPairsPath = outPairsDir ? path.join(outPairsDir, module.DEF_PAIRS_PATH) : null;
-        return module.fetch(coins, pairs, outPairsPath);
-    }
+export async function fetch(coins, pairsOrDir, outPairsDir, networks) {
 
     let promises = [];
     for (let i = 0; i < networks.length; i++) {
         if (networks[i] in NAME_TO_EXCHANGE_MAP) {
             let exchanges = NAME_TO_EXCHANGE_MAP[networks[i]]
             for (let j = 0; j < exchanges.length; j++) {
-                promises.push(fetch_one(exchanges[j]));
+                promises.push(fetchOne(exchanges[j], coins, pairsOrDir, outPairsDir));
             }
         }
     }
-
-    // if (networks.includes("ftm")) {
-    //     promises.push(fetch_one(ftmSpooky));
-    // }
-    // // pairsPath = path.join(pairsDir, "pairs_poly_plasmav2.json");
-    // // outPairsPath = path.join(outPairsDir, "pairs_poly_plasmav2.json");
-    // // polyPlasma.fetch(coins, readPairs(pairsPath), pairsPath);
-
-    // if (networks.includes("poly")) {
-    //     promises.push(fetch_one(polyQuick));
-    // }
-
-    // if (networks.includes("ftm")) {
-    //     promises.push(fetch_one(ftmSushiV2));
-    // }
-
-    // if (networks.includes("bsc")) {
-    //     promises.push(fetch_one(bscPancakeV2));
-    // }
-
-    // if (networks.includes("arbi")) {
-    //     promises.push(fetch_one(arbiSushiV2));
-    // }
-
-    // if (networks.includes("gem")) {
-    //     promises.push(fetch_one(cexGemini));
-    // }
-
-    // if (networks.includes("poly")) {
-    //     promises.push(fetch_one(polySushiV2));
-    // }
-
-    // if (networks.includes("eth")) {
-    //     promises.push(fetch_one(ethUniV2));
-    // }
 
     return await Promise.all(promises);
 }

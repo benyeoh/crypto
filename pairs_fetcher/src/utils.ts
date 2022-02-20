@@ -23,11 +23,17 @@ export function filterCoins(coins: Object, network: string): Object {
     return coins;
 }
 
+let urlToFetcher = {};
+
 export async function fetchUniV2(coins: Object, pairs: any[], outPairsPath: string, factoryAddr: string, rpcURL: string, network: string, dexName: string) {
     const uniV2DEXFactoryAddr = factoryAddr;
-    const provider = new ethers.providers.JsonRpcProvider(rpcURL);
+    if (!(rpcURL in urlToFetcher)) {
+        const provider = new ethers.providers.JsonRpcProvider({ url: rpcURL, timeout: 30000 });
+        urlToFetcher[rpcURL] = new DEXFetcherUniV2(provider);
+    }
 
-    let fetcher = new DEXFetcherUniV2(provider);
+    let fetcher = urlToFetcher[rpcURL];
+
     if (coins) {
         coins = filterCoins(coins, network.toLowerCase());
         console.log(`Fetching pairs for ${dexName} at ${network}: ${rpcURL} ...`);
@@ -43,7 +49,8 @@ export async function fetchUniV2(coins: Object, pairs: any[], outPairsPath: stri
         name: dexName,
         factory: uniV2DEXFactoryAddr,
         network: network,
-        pairs: pairs
+        pairs: pairs,
+        timestamp: Date.now()
     };
 
     console.log(`Done: ${dexName} (${network}). Num Pairs: ${outPairs.pairs.length}`);

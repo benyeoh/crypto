@@ -4,6 +4,8 @@ import { PairContract, UniV2Factory, UniV2Pair } from "./contracts";
 abstract class DEXFetcher {
     private factoryContractCreate;
     private pairContractCreate;
+    private addrToPairContract: Object;
+    private addrToFactoryContract: Object;
 
     constructor(factoryContractCreate, pairContractCreate, provider) {
         this.factoryContractCreate = (addr) => {
@@ -21,12 +23,18 @@ abstract class DEXFetcher {
                 return pairContractCreate(provider, addr);
             }
         }
+
+        this.addrToPairContract = {};
+        this.addrToFactoryContract = {};
     }
 
     protected abstract updateRateParam(pairInfo, pairContract: PairContract);
 
     private async updateParams(pairInfo) {
-        const pair = this.pairContractCreate(pairInfo.addr);
+        if (!this.addrToPairContract[pairInfo.addr]) {
+            this.addrToPairContract[pairInfo.addr] = this.pairContractCreate(pairInfo.addr);
+        }
+        const pair = this.addrToPairContract[pairInfo.addr];
 
         if (!("token1Reserve" in pairInfo || "timestamp" in pairInfo)) {
             let token0Addr = (await pair.token0()).toLowerCase()
@@ -62,7 +70,10 @@ abstract class DEXFetcher {
     }
 
     fetchPairs(coins, addr) {
-        const factory = this.factoryContractCreate(addr)
+        if (!this.addrToFactoryContract[addr]) {
+            this.addrToFactoryContract[addr] = this.factoryContractCreate(addr);
+        }
+        const factory = this.addrToFactoryContract[addr];
 
         let pairs = [];
         const entries = Object.entries(coins);

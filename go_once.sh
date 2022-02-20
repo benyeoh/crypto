@@ -44,7 +44,7 @@ done
 
 echo "Fetching pairs info ..."
 pushd $DIR/pairs_fetcher > /dev/null
-./fetch_all.ts $coin_flag $networks_flag -p $output_dir
+./fetch.ts $coin_flag $networks_flag -p $output_dir
 popd > /dev/null
 
 echo "Compute potential trade path ..."

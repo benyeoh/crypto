@@ -23,7 +23,8 @@ export async function fetch(coins, pairs, outPairsPath) {
     const outPairs = {
         name: DEX_NAME,
         network: NET_NAME,
-        pairs: updatedPairs
+        pairs: updatedPairs,
+        timestamp: Date.now()
     }
 
     console.log(`Done: ${outPairs.name}. Num Pairs: ${outPairs.pairs.length}`)
