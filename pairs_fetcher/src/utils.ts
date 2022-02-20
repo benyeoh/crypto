@@ -27,27 +27,32 @@ export async function fetchUniV2(coins: Object, pairs: any[], outPairsPath: stri
     const uniV2DEXFactoryAddr = factoryAddr;
     const provider = new ethers.providers.JsonRpcProvider(rpcURL);
 
-    let fetcher = new DEXFetcherUniV2(provider)
+    let fetcher = new DEXFetcherUniV2(provider);
     if (coins) {
         coins = filterCoins(coins, network.toLowerCase());
-        console.log(`Fetching pairs for ${dexName} at ${network}: ${rpcURL} ...`)
-        pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr)
+        console.log(`Fetching pairs for ${dexName} at ${network}: ${rpcURL} ...`);
+        pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr);
         // console.log(pairs)
     }
 
-    console.log(`Updating params for ${dexName} at ${network}: ${rpcURL} ...`)
-    pairs = await fetcher.updatePairs(pairs)
-    console.log(pairs.slice(-3));
+    console.log(`Updating params for ${dexName} at ${network}: ${rpcURL} ...`);
+    pairs = await fetcher.updatePairs(pairs);
+    //console.log(pairs.slice(-1));
 
     const outPairs = {
         name: dexName,
         factory: uniV2DEXFactoryAddr,
         network: network,
         pairs: pairs
+    };
+
+    console.log(`Done: ${dexName} (${network}). Num Pairs: ${outPairs.pairs.length}`);
+    if (outPairsPath) {
+        fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
+            err && console.log(err);
+            console.log(`Written: ${outPairsPath}.`);
+        });
     }
 
-    fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
-        err && console.log(err);
-        console.log(`Done: ${outPairsPath}. Num Pairs: ${outPairs.pairs.length}`)
-    });
+    return outPairs;
 }

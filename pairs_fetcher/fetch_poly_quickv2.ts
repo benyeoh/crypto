@@ -4,19 +4,33 @@ const fs = require("fs");
 import { program } from "commander";
 import { fetchUniV2 } from "./src/utils";
 
+export const DEF_PAIRS_PATH = "pairs_poly_quickv2.json";
+export const NET_NAME = "Polygon";
+export const DEX_NAME = "QuickSwap V2";
+
+const FACTORY_ADDR = '0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32';
+const RPC_NETWORKS = ["https://matic-mainnet.chainstacklabs.com/", "https://polygon-rpc.com/", "https://rpc-mainnet.maticvigil.com/"];
+let curNetIdx = 0;
+
 export function fetch(coins, pairs, outPairsPath) {
     return fetchUniV2(coins,
         pairs,
         outPairsPath,
-        '0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32',
-        "https://polygon-rpc.com/",
-        "Polygon",
-        "QuickSwap V2");
+        FACTORY_ADDR,
+        RPC_NETWORKS[curNetIdx],
+        NET_NAME,
+        DEX_NAME).catch((err) => {
+            console.error(`Failed RPC: ${RPC_NETWORKS[curNetIdx]}`);
+            curNetIdx += 1;
+            curNetIdx %= RPC_NETWORKS.length;
+            console.error(`Switching next time to RPC: ${RPC_NETWORKS[curNetIdx]}`);
+            throw err;
+        });
 }
 
 if (require.main === module) {
     program.option('-c, --coins <path to json>', "Input path to coins json");
-    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_poly_quickv2.json')
+    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", `./${DEF_PAIRS_PATH}`)
     program.parse()
     const options = program.opts()
 

@@ -53,8 +53,8 @@ pushd $DIR/pairs_arbitrage > /dev/null
 for target in "${targets[@]}"
 do
     target_lower=$(echo "$target" | awk '{print tolower($0)}')
-    echo ./find_trades.ts -p "$output_dir/pairs_${trades_filter}.json" $path_len_flag -c $target -o $output_dir/paths_${target_lower}.json ${minimum_liquidity} 
-    ./find_trades.ts -p "$output_dir/pairs_${trades_filter}.json" $path_len_flag -c $target -o $output_dir/paths_${target_lower}.json ${minimum_liquidity}
+    # echo ./find_trades.ts -p "$output_dir/pairs_${trades_filter}.json" $path_len_flag -c $target -o $output_dir/paths_${target_lower}.json ${minimum_liquidity} 
+    ./find_trades.ts -p "$output_dir/pairs_${trades_filter}.json" $path_len_flag -c $target -o $output_dir/paths_${target_lower}.json ${minimum_liquidity} &
 done
 
 # Wait until finish

@@ -8,6 +8,7 @@
     "glob": "^7.2.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
+    "workerpool": "^6.2.0",
     "ws": "^8.5.0"
   },
   "scripts": {
@@ -16,7 +17,7 @@
     "compile_arbitrage": "tsc pairs_arbitrage/find_trades.ts",
     "fetch": "node pairs_fetcher/fetch_all.js -c ./coins.json -p ./",
     "update_only": "node pairs_fetcher/fetch_all.js -p ./",
-      "arbitrage": "node pairs_arbitrage/find_trades.js -p ./pairs_ftm_*.json -c USDC -l 3",
+    "arbitrage": "node pairs_arbitrage/find_trades.js -p ./pairs_ftm_*.json -c USDC -l 3",
     "fetch_gemini": "node pairs_fetcher/fetch_cex_gemini.js"
   },
   "devDependencies": {

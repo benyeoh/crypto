@@ -1,0 +1,67 @@
+{
+    "USDC": {
+        "availability": [
+            "arbi",
+            "ftm",
+            "poly",
+            "gem",
+            "bsc"
+        ],
+        "trade": {
+            "minDelta": 15.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "ETH": {
+        "availability": [
+            "arbi",
+            "ftm",
+            "poly",
+            "gem",
+            "bsc"
+        ],
+        "trade": {
+            "minDelta": 0.006,
+            "minLiquidity": 0.1,
+            "maxPathLen": 3
+        }
+    },
+    "BTC": {
+        "availability": [
+            "arbi",
+            "ftm",
+            "poly",
+            "gem",
+            "bsc"
+        ],
+        "trade": {
+            "minDelta": 0.0004,
+            "minLiquidity": 0.01,
+            "maxPathLen": 3
+        }
+    },
+    "FTM": {
+        "availability": [
+            "arbi",
+            "ftm",
+            "poly",
+            "gem",
+            "bsc"
+        ],
+        "trade": {
+            "minDelta": 10.0,
+            "minLiquidity": 10,
+            "maxPathLen": 3
+        }
+    },
+    "*": {
+        "availability": [
+            "arbi",
+            "ftm",
+            "poly",
+            "gem",
+            "bsc"
+        ]
+    }
+}

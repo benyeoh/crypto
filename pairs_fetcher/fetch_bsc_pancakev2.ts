@@ -4,19 +4,33 @@ const fs = require("fs");
 import { program } from "commander";
 import { fetchUniV2 } from "./src/utils";
 
+export const DEF_PAIRS_PATH = "pairs_bsc_pancakev2.json";
+export const NET_NAME = "BinanceSC";
+export const DEX_NAME = "PancakeSwap V2";
+
+const FACTORY_ADDR = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73';
+const RPC_NETWORKS = ["https://bsc-dataseed.binance.org/", "https://bsc-dataseed1.defibit.io/"];
+let curNetIdx = 0;
+
 export function fetch(coins, pairs, outPairsPath) {
     return fetchUniV2(coins,
         pairs,
         outPairsPath,
-        '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
-        "https://bsc-dataseed1.defibit.io/",
-        "BinanceSC",
-        "PancakeSwap V2");
+        FACTORY_ADDR,
+        RPC_NETWORKS[curNetIdx],
+        NET_NAME,
+        DEX_NAME).catch((err) => {
+            console.error(`Failed RPC: ${RPC_NETWORKS[curNetIdx]}`);
+            curNetIdx += 1;
+            curNetIdx %= RPC_NETWORKS.length;
+            console.error(`Switching next time to RPC: ${RPC_NETWORKS[curNetIdx]}`);
+            throw err;
+        });
 }
 
 if (require.main === module) {
     program.option('-c, --coins <path to json>', "Input path to coins json");
-    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_poly_quickv2.json')
+    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", `./${DEF_PAIRS_PATH}`)
     program.parse()
     const options = program.opts()
 

@@ -4,19 +4,33 @@ const fs = require("fs");
 import { program } from "commander";
 import { fetchUniV2 } from "./src/utils";
 
+export const DEF_PAIRS_PATH = "pairs_ftm_spookyv2.json";
+export const NET_NAME = "Fantom";
+export const DEX_NAME = "SpookySwap V2";
+
+const FACTORY_ADDR = '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3';
+const RPC_NETWORKS = ["https://rpc.ftm.tools/", "https://rpc.fantom.network/"];
+let curNetIdx = 0;
+
 export function fetch(coins, pairs, outPairsPath) {
     return fetchUniV2(coins,
         pairs,
         outPairsPath,
-        '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3',
-        "https://rpc.ftm.tools/",
-        "Fantom",
-        "SpookySwap V2");
+        FACTORY_ADDR,
+        RPC_NETWORKS[curNetIdx],
+        NET_NAME,
+        DEX_NAME).catch((err) => {
+            console.error(`Failed RPC: ${RPC_NETWORKS[curNetIdx]}`);
+            curNetIdx += 1;
+            curNetIdx %= RPC_NETWORKS.length;
+            console.error(`Switching next time to RPC: ${RPC_NETWORKS[curNetIdx]}`);
+            throw err;
+        });
 }
 
 if (require.main === module) {
     program.option('-c, --coins <path to json>', "Input path to coins json");
-    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", './pairs_ftm_spooky.json')
+    program.option('-p, --pairs <path to json>', "Input/output path to pairs data json", `./${DEF_PAIRS_PATH}`)
     program.parse()
     const options = program.opts()
 
