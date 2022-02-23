@@ -16,7 +16,7 @@ export async function fetch(coins, pairs, outPairsPath) {
         pairs = fetcher.fetchPairs(coins);
     }
 
-    console.log(`Updating params for Gemini ...`);
+    //console.log(`Updating params for Gemini ...`);
     let updatedPairs = await fetcher.updatePairs(pairs);
     //console.log(`${JSON.stringify(updatedPairs, null, 4)}`);
 
@@ -27,7 +27,7 @@ export async function fetch(coins, pairs, outPairsPath) {
         timestamp: Date.now()
     }
 
-    console.log(`Done: ${outPairs.name}. Num Pairs: ${outPairs.pairs.length}`)
+    //console.log(`Updated: ${outPairs.name}. Num Pairs: ${outPairs.pairs.length}`)
     if (outPairsPath) {
         fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
             err && console.log(err);

@@ -9,7 +9,7 @@ export const NET_NAME = "Arbitrum";
 export const DEX_NAME = "SushiSwap V2";
 
 const FACTORY_ADDR = '0xc35DADB65012eC5796536bD9864eD8773aBc74C4';
-const RPC_NETWORKS = ["https://arb1.arbitrum.io/rpc"];
+const RPC_NETWORKS = ["https://arb1.arbitrum.io/rpc", "https://rpc.ankr.com/arbitrum"];
 let curNetIdx = 0;
 
 export function fetch(coins, pairs, outPairsPath) {

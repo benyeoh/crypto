@@ -9,7 +9,7 @@ export const NET_NAME = "Polygon";
 export const DEX_NAME = "PlasmaSwap V2";
 
 const FACTORY_ADDR = '0x745c475CC101cA5580eFf6F723976480881BC008';
-const RPC_NETWORKS = ["https://polygon-rpc.com/", "https://rpc-mainnet.matic.quiknode.pro"];
+const RPC_NETWORKS = ["https://polygon-rpc.com/", "https://rpc.ankr.com/polygon", "https://rpc-mainnet.matic.quiknode.pro"];
 let curNetIdx = 0;
 
 export function fetch(coins, pairs, outPairsPath) {

@@ -1,10 +1,11 @@
 const workerpool = require("workerpool");
+
+import chalk from 'chalk';
 import * as fetch from "../../pairs_fetcher/fetch";
 import { PairStates } from "./pair_states";
 
 export class Monitor {
     private coins: Object;
-    private logDir: string;
     private networks: Array<string>;
     private coinStart: Object;
     private coinAvail: Object;
@@ -13,9 +14,8 @@ export class Monitor {
     private findTradesTime: number;
     private pairStates: Array<PairStates>;
 
-    constructor(coins, logDir, tradeCoins, updateTime = 3000, staleTime = 3000 * 2, findTradesTime = 1000) {
+    constructor(coins, tradeCoins, updateTime = 2000, staleTime = 2000 + 1000, findTradesTime = 1000) {
         this.coins = coins;
-        this.logDir = logDir;
         this.updateTime = updateTime;
         this.staleTime = staleTime;
         this.findTradesTime = findTradesTime;
@@ -31,7 +31,7 @@ export class Monitor {
             let translatedAvail = [];
             for (let i = 0; i < avail.length; i++) {
                 let exchanges = fetch.NAME_TO_EXCHANGE_MAP[avail[i]];
-                translatedAvail.push(exchanges[0].NET_NAME)
+                translatedAvail.push(exchanges[0].NET_NAME);
             }
             return translatedAvail;
         }
@@ -63,7 +63,12 @@ export class Monitor {
         this.networks = Array.from(networks);
     }
 
-    async go() {
+    private filterPaths(allPaths) {
+        // TODO:
+        return allPaths;
+    }
+
+    async go(pathCallback = []) {
         const pool = workerpool.pool(__dirname + "/fetch_worker_task.js", {
             minWorkers: "max",
             workerType: "auto"
@@ -100,29 +105,37 @@ export class Monitor {
         while (true) {
             let now = Date.now();
             let allPairs = [];
-            let allPairsNames = [];
+            let pairNames = [];
             for (let i = 0; i < this.pairStates.length; i++) {
                 let pairs = this.pairStates[i].getState();
                 if ((now - pairs.timestamp) < this.staleTime) {
-                    allPairs.push(pairs);
-                    allPairsNames.push(pairs.name + " (" + pairs.network + ")");
+                    // Perform a deep copy to be safe
+                    allPairs.push(JSON.parse(JSON.stringify(pairs)));
+                    //allPairs.push(pairs);
+                    pairNames.push(chalk.green(pairs.name + " (" + pairs.network + ")"));
+                } else {
+                    pairNames.push(chalk.red(pairs.name + " (" + pairs.network + ")"));
                 }
             }
 
-            console.log(`Finding trades for: ${allPairsNames}`);
+            console.log(chalk.grey("Finding trades: [ ") + pairNames.join(" | ") + "]");
+
             let waitTimeout = new Promise((res) => { setTimeout(res, this.findTradesTime); });
             let pathPromises = [];
             let pathCoin = [];
             for (const [k, v] of Object.entries(this.coinStart)) {
-                //console.log(`Finding trade for ${k} ...`)
                 pathCoin.push(k);
-                pathPromises.push(pool.exec("findTrades", [allPairs, k, v.maxPathLen, v.minDelta, v.minLiquidity]));
+                pathPromises.push(pool.exec("findTrades", [allPairs, k, v.maxPathLen, v.minDelta, v.minLiquidity, this.coinAvail]));
             }
 
-            try {
-                let allPaths = await Promise.all(pathPromises);
-                for (let i = 0; i < allPaths.length; i++) {
-                    let path = allPaths[i].slice(-1)[0];
+            for (let i = 0; i < pathPromises.length; i++) {
+                try {
+                    let allPaths = this.filterPaths(await pathPromises[i]);
+                    for (let j = 0; j < pathCallback.length; j++) {
+                        pathCallback[j](allPaths, pathCoin[i], now);
+                    }
+
+                    let path = allPaths.slice(-1)[0];
                     if (path) {
                         console.log(`Results for ${pathCoin[i]}:`);
                         console.log(JSON.stringify(path, null, 4));
@@ -132,12 +145,13 @@ export class Monitor {
 
                         foundOccurences += 1;
                     }
+                } catch (err) {
+                    console.log(chalk.dim.gray(`${err.message}`));
                 }
-            } catch (err) {
-                //console.error(err);
             }
 
-            console.log(`${Date().toString()}: Finished iteration ${iterNum}. Found ${foundOccurences} so far. Best deltas: ${bestDeltas}`);
+            console.log(`${chalk.cyan(new Date().toLocaleString())}: Finished iteration ${iterNum}. `
+                + `Found ${chalk.green(foundOccurences)} so far. Best deltas: ${chalk.yellow(bestDeltas)}`);
             iterNum += 1;
 
             // Wait for timeout

@@ -32,7 +32,7 @@ function readPairs(pairsPath) {
 
 export const NAME_TO_EXCHANGE_MAP = {
     "ftm": [ftmSpooky, ftmSushiV2],
-    "poly": [polySushiV2, polyQuick], //polyPlasma]
+    "poly": [polySushiV2, polyQuick, polyPlasma],
     "gem": [cexGemini],
     "bsc": [bscPancakeV2],
     "arbi": [arbiSushiV2],

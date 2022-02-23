@@ -9,7 +9,7 @@ export const NET_NAME = "Fantom";
 export const DEX_NAME = "SushiSwap V2";
 
 const FACTORY_ADDR = '0xc35DADB65012eC5796536bD9864eD8773aBc74C4';
-const RPC_NETWORKS = ["https://rpc.ftm.tools/", "https://rpc.fantom.network/"];
+const RPC_NETWORKS = ["https://rpc.ftm.tools/", "https://rpc.ankr.com/fantom", "https://rpc.fantom.network/"];
 let curNetIdx = 0;
 
 export function fetch(coins, pairs, outPairsPath) {

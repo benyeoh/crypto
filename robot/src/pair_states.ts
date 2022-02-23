@@ -1,4 +1,4 @@
-//import { NAME_TO_EXCHANGE_MAP, fetchOne } from "../../pairs_fetcher/fetch";
+import chalk from 'chalk';
 
 export class PairStates {
     private fetcher;
@@ -17,8 +17,7 @@ export class PairStates {
                 this.state = pairs;
                 return;
             } catch (err) {
-                console.error(`${this.fetcher.DEX_NAME} (${this.fetcher.NET_NAME}): ${err}`);
-                console.error(`${this.fetcher.DEX_NAME} (${this.fetcher.NET_NAME}): Re-initializing ...`);
+                console.error(`${chalk.red(this.fetcher.DEX_NAME)} (${chalk.red(this.fetcher.NET_NAME)}): ${chalk.magenta(err)}`);
             }
         }
     }
@@ -29,8 +28,7 @@ export class PairStates {
                 this.state = pairs;
                 this.start();
             }).catch((err) => {
-                console.error(`${this.fetcher.DEX_NAME} (${this.fetcher.NET_NAME}): ${err}`);
-                console.error(`${this.fetcher.DEX_NAME} (${this.fetcher.NET_NAME}): Re-polling ...`);
+                console.error(`${chalk.red(this.fetcher.DEX_NAME)} (${chalk.red(this.fetcher.NET_NAME)}): ${chalk.magenta(err)}`);
                 this.start();
             });
         }, this.pollTime);

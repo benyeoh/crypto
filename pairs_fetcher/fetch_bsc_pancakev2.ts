@@ -9,7 +9,7 @@ export const NET_NAME = "BinanceSC";
 export const DEX_NAME = "PancakeSwap V2";
 
 const FACTORY_ADDR = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73';
-const RPC_NETWORKS = ["https://bsc-dataseed.binance.org/", "https://bsc-dataseed1.defibit.io/"];
+const RPC_NETWORKS = ["https://bsc-dataseed.binance.org/", "https://bsc-dataseed1.defibit.io/", "https://rpc.ankr.com/bsc"];
 let curNetIdx = 0;
 
 export function fetch(coins, pairs, outPairsPath) {

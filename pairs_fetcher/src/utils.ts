@@ -28,22 +28,27 @@ let urlToFetcher = {};
 export async function fetchUniV2(coins: Object, pairs: any[], outPairsPath: string, factoryAddr: string, rpcURL: string, network: string, dexName: string) {
     const uniV2DEXFactoryAddr = factoryAddr;
     if (!(rpcURL in urlToFetcher)) {
-        const provider = new ethers.providers.JsonRpcProvider({ url: rpcURL, timeout: 30000 });
+        const provider = new ethers.providers.JsonRpcProvider({ url: rpcURL, timeout: 15000 });
         urlToFetcher[rpcURL] = new DEXFetcherUniV2(provider);
     }
 
     let fetcher = urlToFetcher[rpcURL];
 
-    if (coins) {
-        coins = filterCoins(coins, network.toLowerCase());
-        console.log(`Fetching pairs for ${dexName} at ${network}: ${rpcURL} ...`);
-        pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr);
-        // console.log(pairs)
-    }
+    try {
+        if (coins) {
+            coins = filterCoins(coins, network.toLowerCase());
+            console.log(`Fetching pairs for ${dexName} at ${network}: ${rpcURL} ...`);
+            pairs = await fetcher.fetchPairs(coins, uniV2DEXFactoryAddr);
+            // console.log(pairs)
+        }
 
-    console.log(`Updating params for ${dexName} at ${network}: ${rpcURL} ...`);
-    pairs = await fetcher.updatePairs(pairs);
-    //console.log(pairs.slice(-1));
+        //console.log(`Updating params for ${dexName} at ${network}: ${rpcURL} ...`);
+        pairs = await fetcher.updatePairs(pairs);
+        //console.log(pairs.slice(-1));
+    } catch (err) {
+        delete urlToFetcher[rpcURL];
+        throw err;
+    }
 
     const outPairs = {
         name: dexName,
@@ -53,7 +58,7 @@ export async function fetchUniV2(coins: Object, pairs: any[], outPairsPath: stri
         timestamp: Date.now()
     };
 
-    console.log(`Done: ${dexName} (${network}). Num Pairs: ${outPairs.pairs.length}`);
+    //console.log(`Updated: ${dexName} (${network}). Num Pairs: ${outPairs.pairs.length}`);
     if (outPairsPath) {
         fs.writeFile(outPairsPath, JSON.stringify(outPairs, null, 4), "utf8", (err) => {
             err && console.log(err);
