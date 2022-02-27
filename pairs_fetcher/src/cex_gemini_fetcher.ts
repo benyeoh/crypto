@@ -87,7 +87,7 @@ export class CEXGeminiFetcher {
                         // Set the reserves based on mid price
                         // TODO: Compute least squares using CPMM model based on first few entries in order book
                         let midPrice = (new BigNumber(data.events[0].price)).plus(new BigNumber(data.events[1].price)).multipliedBy(0.5);
-                        let liquidity = (new BigNumber(data.events[0].delta)).plus(new BigNumber(data.events[1].delta)).multipliedBy(1000);
+                        let liquidity = (new BigNumber(data.events[0].delta)).plus(new BigNumber(data.events[1].delta)).multipliedBy(250);
                         newPairs[data.events[0].symbol].token1Reserve = liquidity.multipliedBy(1.0).toString();
                         newPairs[data.events[0].symbol].token2Reserve = liquidity.multipliedBy(midPrice).toString();
                         newPairs[data.events[0].symbol].rateA = 0.9965;

@@ -8,13 +8,20 @@ export class PairStates {
     constructor(fetcherModule, pollTime: number) {
         this.fetcher = fetcherModule;
         this.pollTime = pollTime;
+        this.state = { timestamp: 0 };
     }
 
-    async initialize(coins) {
+    async initialize(coins, onlyAllowAddrs: Set<string> = null) {
         while (true) {
             try {
                 let pairs = await this.fetcher.fetch(coins, null, null);
+                let totalNumPairs = pairs.pairs.length;
+                if (onlyAllowAddrs) {
+                    onlyAllowAddrs = new Set(Array.from(onlyAllowAddrs).map((addr) => addr.toLowerCase()));
+                    pairs.pairs = pairs.pairs.filter((pair) => onlyAllowAddrs.has(pair.addr.toLowerCase()));
+                }
                 this.state = pairs;
+                console.log(`${chalk.green(this.fetcher.DEX_NAME)} (${chalk.green(this.fetcher.NET_NAME)}): ${chalk.yellow(pairs.pairs.length)} / ${totalNumPairs} filtered pairs`)
                 return;
             } catch (err) {
                 console.error(`${chalk.red(this.fetcher.DEX_NAME)} (${chalk.red(this.fetcher.NET_NAME)}): ${chalk.magenta(err)}`);
@@ -32,6 +39,10 @@ export class PairStates {
                 this.start();
             });
         }, this.pollTime);
+    }
+
+    getFetcher() {
+        return this.fetcher;
     }
 
     getState() {

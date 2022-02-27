@@ -9,6 +9,9 @@ export const NET_NAME = "Arbitrum";
 export const DEX_NAME = "SushiSwap V2";
 
 const FACTORY_ADDR = '0xc35DADB65012eC5796536bD9864eD8773aBc74C4';
+// Trading rpcs:
+// https://arb-mainnet.g.alchemy.com/v2/w8ig9NXDq7hUQ0Uep-4ux4xhYczmodQ7 (alchemy) (330 CUPS - ie, eth_call is 26 CUs, eth_sendRawTransaction is 250)
+// https://speedy-nodes-nyc.moralis.io/0addbe156c5d6b97351c65cb/arbitrum/mainnet (moralis) (1500 reqs / min - ie, eth_call is 3 reqs, eth_sendRawTransaction is 35 requests)
 const RPC_NETWORKS = ["https://arb1.arbitrum.io/rpc", "https://rpc.ankr.com/arbitrum"];
 let curNetIdx = 0;
 

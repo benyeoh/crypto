@@ -9,6 +9,9 @@ export const NET_NAME = "Fantom";
 export const DEX_NAME = "SpookySwap V2";
 
 const FACTORY_ADDR = '0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3';
+// Trading RPC:
+// https://nd-644-562-472.p2pify.com/16b2d3daafe70fa84aaa5682883c1227  (chainstack - 3mil requests per month)
+// https://speedy-nodes-nyc.moralis.io/0addbe156c5d6b97351c65cb/fantom/mainnet (moralis)
 const RPC_NETWORKS = ["https://rpc.ankr.com/fantom", "https://rpc.ftm.tools/", "https://rpc.fantom.network/"];
 let curNetIdx = 0;
 

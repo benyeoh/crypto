@@ -9,6 +9,7 @@
     "glob": "^7.2.0",
     "nodeplotlib": "^1.0.1",
     "plotly.js-dist-min": "^2.9.0",
+    "simple-statistics": "^7.7.3",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5",
     "workerpool": "^6.2.0",

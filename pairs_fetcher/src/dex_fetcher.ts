@@ -6,6 +6,7 @@ abstract class DEXFetcher {
     private pairContractCreate;
     private addrToPairContract: Object;
     private addrToFactoryContract: Object;
+    private provider: ethers.providers.Provider;
 
     constructor(factoryContractCreate, pairContractCreate, provider) {
         this.factoryContractCreate = (addr) => {
@@ -24,6 +25,7 @@ abstract class DEXFetcher {
             }
         }
 
+        this.provider = provider;
         this.addrToPairContract = {};
         this.addrToFactoryContract = {};
     }
@@ -117,6 +119,13 @@ abstract class DEXFetcher {
     updatePairs(pairs) {
         let filteredPairs = pairs.filter((pair) => parseInt(pair["addr"]) !== 0)
         return Promise.all(Array.from(filteredPairs, (v, i) => this.updateParams(v)))
+    }
+
+    onUpdatePairs(pairs, callback) {
+        this.provider.on("block", async (blkNum) => {
+            console.log(blkNum);
+
+        });
     }
 }
 
