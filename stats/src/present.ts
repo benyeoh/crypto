@@ -1,7 +1,7 @@
-import { Layout, plot, Plot } from 'nodeplotlib';
-import { getCoinsFromKey } from './parser';
+import { Layout, plot, stack, clear, Plot } from 'nodeplotlib';
+import { getCoinsFromKey } from './path_utils';
 
-export function plotBar2(pathStats, k1, k2, axis = null) {
+export function plotBar2(pathStats, k1, k2, useStack = false, axis = null) {
     let data: Plot[] = [];
     if (!(k1 instanceof Array)) {
         k1 = [k1];
@@ -28,7 +28,8 @@ export function plotBar2(pathStats, k1, k2, axis = null) {
             x: x,
             y: y,
             type: "bar",
-            name: `${upperCaseify(k1[i])} ${upperCaseify(k2[i])}`
+            name: `${upperCaseify(k1[i])} ${upperCaseify(k2[i])}`,
+            //width: 1600
         }
 
         if (axis !== null && axis[i] === 1) {
@@ -41,6 +42,8 @@ export function plotBar2(pathStats, k1, k2, axis = null) {
     let layout: Layout = {
         barmode: "group",
         title: getCoinsFromKey(pathStats[0][0])[0] + `: ${keyStr}`,
+        // width: 1600,
+        //autosize: false
     };
 
     if (axis !== null && axis.includes(1)) {
@@ -50,7 +53,7 @@ export function plotBar2(pathStats, k1, k2, axis = null) {
         }
     }
 
-    plot(data, layout);
+    stack(data, layout);
 }
 
 export function plotBar(pathStats, k1) {
@@ -78,15 +81,23 @@ export function plotBar(pathStats, k1) {
             x: x,
             y: y,
             type: "bar",
-            name: `${upperCaseify(k1[i])}`
+            name: `${upperCaseify(k1[i])}`,
+            //width: 1600
+
         });
     }
 
     let layout: Layout = {
         title: getCoinsFromKey(pathStats[0][0])[0] + ` - ${keyStr}`,
+        //width: 1600,
+        //autosize: false
     };
 
-    plot(data, layout);
+    stack(data, layout);
+}
+
+export function flushPlots() {
+    plot();
 }
 
 function upperCaseify(str) {

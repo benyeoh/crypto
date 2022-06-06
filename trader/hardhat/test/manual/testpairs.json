@@ -1,0 +1,69 @@
+{
+    "fantom": {
+        "factory": {
+            "spookyswap v2 (fantom)": "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707"
+        },
+        "pairs": [
+            {
+                "addr": "0xf605DCd1596b7E1fF752eef65F88bCaF2d36344D",
+                "token1": {
+                    "name": "FTM",
+                    "addr": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+                    "decimals": 18,
+                    "peg": "FTM"
+                },
+                "token2": {
+                    "name": "MIM",
+                    "addr": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+                    "decimals": 18,
+                    "peg": "USD"
+                },
+                "token1Reserve": "4266971.751382225908104782",
+                "token2Reserve": "4423245.269309901650591364",
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            },
+            {
+                "addr": "0xB746F89aa446EA63970D810e274E1e523Dc101Ba",
+                "token1": {
+                    "name": "MIM",
+                    "addr": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+                    "decimals": 18,
+                    "peg": "USD"
+                },
+                "token2": {
+                    "name": "USDC",
+                    "addr": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token1Reserve": "218166.252744976516410393",
+                "token2Reserve": "218085.61173",
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            },
+            {
+                "addr": "0xf573c1b509F53b7A2A636ff304504495a8002129",
+                "token1": {
+                    "name": "FTM",
+                    "addr": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+                    "decimals": 18,
+                    "peg": "FTM"
+                },
+                "token2": {
+                    "name": "USDC",
+                    "addr": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token1Reserve": "55801274.142856796118828366",
+                "token2Reserve": "55159563.366045",
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        ]
+    }
+}

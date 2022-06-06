@@ -4,15 +4,24 @@ const path = require("path");
 const fs = require("fs");
 import { program } from "commander";
 
-import { parseTradePaths } from "./src/parser";
-import { getPathStatistics, getSorter, getSorter2, getFilterByKey } from "./src/base_stats";
-import { plotBar2, plotBar } from "./src/present";
+import { parseTradePaths, parseTradePathsFromFiles } from "./src/parser";
+import { getPathStatistics, } from "./src/base_stats";
+import * as filter from "./src/filter";
+import { plotBar2, plotBar, flushPlots } from "./src/present";
 
 program.option('-i, --inputDir <path to input dir>', "Input directory path containing all coin trades");
+program.option('--files', "Input directory path containing all coin trades");
+
 program.parse()
 const options = program.opts()
 
-let allTradePaths = parseTradePaths(options.inputDir, options.inputDir);
+let allTradePaths;
+if (options.files) {
+    allTradePaths = parseTradePathsFromFiles(options.inputDir);
+} else {
+    allTradePaths = parseTradePaths(options.inputDir, options.inputDir);
+}
+
 for (const [coinName, pathMapping] of Object.entries(allTradePaths)) {
     let pathStats = getPathStatistics(pathMapping);
     //pathStats.sort(getSorter2("volPerDelta", "median", true));
@@ -27,12 +36,20 @@ for (const [coinName, pathMapping] of Object.entries(allTradePaths)) {
     //     pathStats.filter(getFilterByKey([], ["^((?!Gemini).)*$", "^((?!Gemini).)*$", "^((?!Gemini).)*$"]))
     // )
 
-    if (pathStats.length > 0) {
-        pathStats.sort(getSorter("uniqueOccurences"));
+    //pathStats = pathStats.filter(getFilterByRegex(".*", "^((?!Gemini).)*$"));
+    //pathStats = pathStats.filter(getFilterByRegex(/.*/, /^(?:[^\(\)]+?\((.+?)\))(?:,\s*[^\(\)]+?\(\1\))+$/)); // Check from same network
+    //pathStats = pathStats.filter(getFilterByRegex(/.*/, /^(?:((?!Gemini)[^,])+,\s*((?!Gemini)[^,])+)$/)); // Check from same network
 
-        plotBar(pathStats.slice(0, 50), "uniqueOccurences");
-        plotBar2(pathStats.slice(0, 50), ["duration", "duration", "duration"], ["mean", "median", "stdDev"]);
-        plotBar2(pathStats.slice(0, 50), ["volPerDelta", "optimalDelta"], ["median", "median"]);
+    //pathStats = pathStats.filter(filter.getFilterByKeyStartEnd([".*", ".*"], ([".*\(fantom\)", ".*\(arbitrum\)"]), true));
+
+    if (pathStats.length > 0) {
+
+        pathStats.sort(filter.getSorter("uniqueOccurences"));
+
+        plotBar(pathStats.slice(0, 100), "uniqueOccurences");
+        plotBar2(pathStats.slice(0, 100), ["duration", "duration"], ["mean", "median"]);
+        plotBar2(pathStats.slice(0, 100), ["volPerDelta", "optimalDelta"], ["median", "median"]);
+        flushPlots();
     } else {
         console.log(`Skipping ${coinName} ...`);
     }

@@ -1,0 +1,70 @@
+{
+    "path": [
+        {
+            "node": {
+                "name": "USDC",
+                "peg": "USD"
+            },
+            "edge": null
+        },
+        {
+            "node": {
+                "name": "ETH",
+                "peg": "ETH"
+            },
+            "edge": {
+                "addr": "0x905dfCD5649217c42684f23958568e533C711Aa3",
+                "token1": {
+                    "name": "ETH",
+                    "addr": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token2": {
+                    "name": "USDC",
+                    "addr": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token1Reserve": "9622.366478905202844306",
+                "token2Reserve": "33043170.842267",
+                "timestamp": 1648940730,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "sushiswap v2 (arbitrum)"
+            }
+        },
+        {
+            "node": {
+                "name": "MIM",
+                "peg": "USD"
+            },
+            "edge": {
+                "addr": "0xb6DD51D5425861C808Fd60827Ab6CFBfFE604959",
+                "token1": {
+                    "name": "ETH",
+                    "addr": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token2": {
+                    "name": "MIM",
+                    "addr": "0xfea7a6a0b346362bf88a9e4a88416b77a57d6c2a",
+                    "decimals": 18,
+                    "peg": "USD"
+                },
+                "token1Reserve": "5197.368542940956478298",
+                "token2Reserve": "18076460.538571568809680818",
+                "timestamp": 1648937115,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "sushiswap v2 (arbitrum)"
+            }
+        }
+    ],
+    "optimalVol": 39222.159639067795,
+    "optimalDelta": 132.09506530839542,
+    "swapPrice": 1.0067470789937536,
+    "liquidity": 136134550158406.75,
+    "arbFactor": 1.0007257722352303
+}

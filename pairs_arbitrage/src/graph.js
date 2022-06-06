@@ -28,6 +28,7 @@ var Graph = /** @class */ (function () {
     function Graph() {
         this.nodes = new Map();
         this.edges = new Map();
+        this.peggedNodes = new Map();
     }
     return Graph;
 }());
@@ -35,6 +36,7 @@ exports.Graph = Graph;
 function updateGraphFromPairs(pairsInfo, graph) {
     var nodes = graph.nodes;
     var edges = graph.edges;
+    var peggedNodes = graph.peggedNodes;
     var networkID = pairsInfo.name + " (" + pairsInfo.network + ")";
     for (var i = 0; i < pairsInfo.pairs.length; i++) {
         var pair = pairsInfo.pairs[i];
@@ -49,6 +51,14 @@ function updateGraphFromPairs(pairsInfo, graph) {
                     edges: new Array()
                 };
                 nodes.set(pair["token1"].name, nodeA);
+                if (nodeA.data.peg !== null) {
+                    var peggedNodeArray = peggedNodes.get(nodeA.data.peg);
+                    if (!peggedNodeArray) {
+                        peggedNodeArray = [];
+                        peggedNodes.set(nodeA.data.peg, peggedNodeArray);
+                    }
+                    peggedNodeArray.push(nodeA);
+                }
             }
             if (!nodeB) {
                 nodeB = {
@@ -56,6 +66,14 @@ function updateGraphFromPairs(pairsInfo, graph) {
                     edges: new Array()
                 };
                 nodes.set(pair["token2"].name, nodeB);
+                if (nodeB.data.peg !== null) {
+                    var peggedNodeArray = peggedNodes.get(nodeB.data.peg);
+                    if (!peggedNodeArray) {
+                        peggedNodeArray = [];
+                        peggedNodes.set(nodeB.data.peg, peggedNodeArray);
+                    }
+                    peggedNodeArray.push(nodeB);
+                }
             }
             var edgePair = __assign({}, pairsInfo.pairs[i]);
             edgePair["exchangeID"] = networkID;

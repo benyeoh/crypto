@@ -1,0 +1,628 @@
+{
+    "name": "sushiswap v2",
+    "factory": "0xc35DADB65012eC5796536bD9864eD8773aBc74C4",
+    "network": "fantom",
+    "pairs": [
+        {
+            "addr": "0x8Be92F3d64E91D08AB1CC8A5c487dA3f1695b11e",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0x049d68029688eabf473097a2fc38ef61633a3c7a",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "44.249699",
+            "token2Reserve": "44.308717",
+            "timestamp": 1648717096,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xbd0eEC56dA621B6b31E3d06614f7853624e1c0af",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "7.894917",
+            "token2Reserve": "7.814238063035603193",
+            "timestamp": 1648880438,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x829843DD57863662c63c66A4c3996515504d1e0D",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "0.000001",
+            "token2Reserve": "0.000000000024432859",
+            "timestamp": 1616509456,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xA48869049e36f8Bfe0Cc5cf655632626988c0140",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "663450.042604",
+            "token2Reserve": "426807.105416051658777907",
+            "timestamp": 1649077976,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xFFdc0531288dc91C1F49Db03A90Ed84725E9eDa7",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "MIM",
+                "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "552927.84865",
+            "token2Reserve": "554354.036255762178162052",
+            "timestamp": 1649077118,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x1d9E406628FfD859b4ec1BEC8d029D1b1f76A801",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "CRV",
+                "addr": "0x1e4f97b9f9f913c46f1632781732927b9019c68b",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token1Reserve": "0.006813",
+            "token2Reserve": "0.001290724142984457",
+            "timestamp": 1646317006,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x52FDB10013bbe9dffE8F27f709a867Cb9Cc53C60",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "SUSHI",
+                "addr": "0xae75a438b2e0cb8bb01ec1e1e376de11d44477cc",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token1Reserve": "153.239776",
+            "token2Reserve": "35.078957170793648283",
+            "timestamp": 1649069787,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x2d89BB3b1448152002453AA37fbE4051AfdBf56d",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0x6a07a792ab2965c72a5b8088d3a069a7ac3a993b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "2076.185777",
+            "token2Reserve": "8.776427616675363975",
+            "timestamp": 1649068950,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xD0154BE15563c100A90C9B4499f54E0F2f3098c6",
+            "token1": {
+                "name": "USDT",
+                "addr": "0x049d68029688eabf473097a2fc38ef61633a3c7a",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.000149",
+            "token2Reserve": "0.000143492361699627",
+            "timestamp": 1638958285,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xd019dd7C760c6431797d6ed170bFFb8FAee11F99",
+            "token1": {
+                "name": "USDT",
+                "addr": "0x049d68029688eabf473097a2fc38ef61633a3c7a",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "553529.019754",
+            "token2Reserve": "355928.246990644708889103",
+            "timestamp": 1649077594,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x9e8aC7e6d9d92038d0a4C7C758e331a7C6B5a617",
+            "token1": {
+                "name": "USDT",
+                "addr": "0x049d68029688eabf473097a2fc38ef61633a3c7a",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "SUSHI",
+                "addr": "0xae75a438b2e0cb8bb01ec1e1e376de11d44477cc",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token1Reserve": "0.137063",
+            "token2Reserve": "0.027671744735753203",
+            "timestamp": 1649069787,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x71C8BceEcE3dAf9E27741D2Cc1F03170f862555f",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "142.464954610119390903",
+            "token2Reserve": "494816.91161906337898053",
+            "timestamp": 1649077525,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xd32F2EB49E91aA160946f3538564118388d6246a",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "10686.996068751444010836",
+            "token2Reserve": "16654.013086882922448071",
+            "timestamp": 1649076910,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xab2D42c1109102F7DDfa455749d424221fDBeB9A",
+            "token1": {
+                "name": "MIM",
+                "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "1.005945360042621596",
+            "token2Reserve": "0.995760989219964176",
+            "timestamp": 1647927002,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x33e29a9eBdD370a8D50656e822aBFD3A910dA1b6",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x321162cd933e2be498cd2267a90534a804051b11",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "28.60809946",
+            "token2Reserve": "378.661764661238925332",
+            "timestamp": 1649074642,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xC92D97416328A461BcE2F539498b505c6c97748f",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "BTC",
+                "addr": "0x321162cd933e2be498cd2267a90534a804051b11",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token1Reserve": "2959.531540574665332256",
+            "token2Reserve": "0.10046525",
+            "timestamp": 1649076694,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xEd88D84c8728BAAA53Fd7226c9E55bD36e777AdE",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "LINK",
+                "addr": "0xb3654dc3d10ea7645f8319668e8f54d2574fbdc8",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token1Reserve": "0.000142575595270879",
+            "token2Reserve": "0.024747249660824137",
+            "timestamp": 1645022235,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x3d0BD54c48C2C433ea6fed609Cc3d5Fb7A77622B",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "670215.949851766658899159",
+            "token2Reserve": "300.657866623409447577",
+            "timestamp": 1649078426,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x97A039255ecC352e5782Fc49beA26B03F60FA49b",
+            "token1": {
+                "name": "CRV",
+                "addr": "0x1e4f97b9f9f913c46f1632781732927b9019c68b",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "31182.156887526240652339",
+            "token2Reserve": "25.555860880227576611",
+            "timestamp": 1649076317,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x33C89f1f62E4847B6e8595904185594B324c4BA4",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "SUSHI",
+                "addr": "0xae75a438b2e0cb8bb01ec1e1e376de11d44477cc",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token1Reserve": "0.005065534029877201",
+            "token2Reserve": "4.186905506298989557",
+            "timestamp": 1649037885,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xeF4b24f6858CdDf952F81CB9b55635B2042005A0",
+            "token1": {
+                "name": "SPELL",
+                "addr": "0x468003b688943977e6130f4f68f23aad939a1040",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "26.020525921187953705",
+            "token2Reserve": "0.000039539199990523",
+            "timestamp": 1648920905,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x1Ca86e57103564F47fFCea7259a6ce8Cc1301549",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "LINK",
+                "addr": "0xb3654dc3d10ea7645f8319668e8f54d2574fbdc8",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token1Reserve": "105872.206311581015054343",
+            "token2Reserve": "9482.638368189347858757",
+            "timestamp": 1649078437,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x2ed684f14f951b467f2066c663F488cd0F0475E7",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "MIM",
+                "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "55.606788057838786208",
+            "token2Reserve": "87.683012706217895144",
+            "timestamp": 1649077118,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x177e2cc843d2Ee20AA884DC8af2a865adf78adb2",
+            "token1": {
+                "name": "CRV",
+                "addr": "0x1e4f97b9f9f913c46f1632781732927b9019c68b",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token2": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "746.769410787971557674",
+            "token2Reserve": "1365.487874977996258391",
+            "timestamp": 1649066391,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x49D2e0DC99C7358D7A9A8633Bf6df111D0EE7F65",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "SUSHI",
+                "addr": "0xae75a438b2e0cb8bb01ec1e1e376de11d44477cc",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token1Reserve": "145604.873391797465111306",
+            "token2Reserve": "52264.367609085516518836",
+            "timestamp": 1649058798,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xAB3F048f9a169D969Ea9fb2Fdf74Bc48107Bd573",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "SPELL",
+                "addr": "0x468003b688943977e6130f4f68f23aad939a1040",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "2.33252051581095371",
+            "token2Reserve": "611.060143459398464437",
+            "timestamp": 1649047293,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x3CBe1476d86ccE439bB30201A389B690C8cC40aF",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "BOO",
+                "addr": "0x841fad6eae12c286d1fd18d1d525dffa75c7effe",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.162342444158652118",
+            "token2Reserve": "0.015748572229923812",
+            "timestamp": 1644677271,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xe8D9fD17ef67b5A807B15CE52aFF96Bd63dA9CbF",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "BAND",
+                "addr": "0x46e7628e8b4350b2716ab470ee0ba1fa9e76c6c5",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.590524067937758512",
+            "token2Reserve": "0.204522583610481481",
+            "timestamp": 1648940393,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x27884C7647DeB61c9F2b9202D1141BB84661756b",
+            "token1": {
+                "name": "FTM",
+                "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0x6a07a792ab2965c72a5b8088d3a069a7ac3a993b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "11.768968153026690827",
+            "token2Reserve": "0.074289818939275228",
+            "timestamp": 1648987377,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xC496D5Dd662c2c88FbA41AdB23125E036ca2a81A",
+            "token1": {
+                "name": "MIM",
+                "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "SUSHI",
+                "addr": "0xae75a438b2e0cb8bb01ec1e1e376de11d44477cc",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token1Reserve": "0.002887064913588942",
+            "token2Reserve": "0.000842679746402411",
+            "timestamp": 1647927002,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x63F548b530b42ba1d1D0Dc160848D389DF3690D4",
+            "token1": {
+                "name": "SPELL",
+                "addr": "0x468003b688943977e6130f4f68f23aad939a1040",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "MIM",
+                "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "5136.482443633161360129",
+            "token2Reserve": "30.84448227965603525",
+            "timestamp": 1649068386,
+            "rateA": 0.997,
+            "rateB": 1
+        }
+    ],
+    "timestamp": 1649078628968
+}

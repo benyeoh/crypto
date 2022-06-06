@@ -1,0 +1,97 @@
+{
+    "path": [
+        {
+            "node": {
+                "name": "FTM",
+                "peg": null
+            },
+            "edge": null
+        },
+        {
+            "node": {
+                "name": "ETH",
+                "peg": "ETH"
+            },
+            "edge": {
+                "addr": "0xf0702249F4D3A25cD3DED7859a165693685Ab577",
+                "token1": {
+                    "name": "FTM",
+                    "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token2": {
+                    "name": "ETH",
+                    "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token1Reserve": "16696365.106915060214992861",
+                "token2Reserve": "7682.531138017015206872",
+                "timestamp": 1648912273,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        },
+        {
+            "node": {
+                "name": "SPELL",
+                "peg": null
+            },
+            "edge": {
+                "addr": "0x8f93Eaae544e8f5EB077A1e09C1554067d9e2CA8",
+                "token1": {
+                    "name": "SPELL",
+                    "addr": "0x3e6648c5a70a150a88bce65f4ad4d506fe15d2af",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token2": {
+                    "name": "ETH",
+                    "addr": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token1Reserve": "396398820.13316525576637161",
+                "token2Reserve": "570.282475074536107205",
+                "timestamp": 1648912226,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "sushiswap v2 (arbitrum)"
+            }
+        },
+        {
+            "node": {
+                "name": "FTM",
+                "peg": null
+            },
+            "edge": {
+                "addr": "0x78f82c16992932EfDd18d93f889141CcF326DBc2",
+                "token1": {
+                    "name": "FTM",
+                    "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token2": {
+                    "name": "SPELL",
+                    "addr": "0x468003b688943977e6130f4f68f23aad939a1040",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token1Reserve": "855311.624082447889770434",
+                "token2Reserve": "267685113.026629912056916643",
+                "timestamp": 1648912290,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        }
+    ],
+    "optimalVol": 3110.824754171523,
+    "optimalDelta": 19.797895325789337,
+    "swapPrice": 1.0127688929646792,
+    "liquidity": 241251292678.31763,
+    "arbFactor": 1.0067205821144896
+}

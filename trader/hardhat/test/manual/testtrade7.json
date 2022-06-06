@@ -1,0 +1,104 @@
+{
+    "path": [
+        {
+            "node": {
+                "name": "FTM",
+                "peg": "FTM"
+            },
+            "edge": null
+        },
+        {
+            "node": {
+                "name": "MIM",
+                "peg": "USD"
+            },
+            "edge": {
+                "addr": "0x6f86e65b255c9111109d2D2325ca2dFc82456efc",
+                "token1": {
+                    "name": "FTM",
+                    "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                    "decimals": 18,
+                    "peg": "FTM"
+                },
+                "token2": {
+                    "name": "MIM",
+                    "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                    "decimals": 18,
+                    "peg": "USD"
+                },
+                "token1Reserve": "4266971.751382225908104782",
+                "token2Reserve": "4423245.269309901650591364",
+                "timestamp": 1651114740,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        },
+        {
+            "node": {
+                "name": "USDC",
+                "peg": "USD"
+            },
+            "edge": {
+                "addr": "0x3C9Ad6268065E425085F11ab8ea803973BE6bcF3",
+                "token1": {
+                    "name": "USDC",
+                    "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token2": {
+                    "name": "MIM",
+                    "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                    "decimals": 18,
+                    "peg": "USD"
+                },
+                "token1Reserve": "218085.61173",
+                "token2Reserve": "218166.252744976516410393",
+                "timestamp": 1651113659,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        },
+        {
+            "node": {
+                "name": "FTM",
+                "peg": "FTM"
+            },
+            "edge": {
+                "addr": "0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c",
+                "token1": {
+                    "name": "USDC",
+                    "addr": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token2": {
+                    "name": "FTM",
+                    "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                    "decimals": 18,
+                    "peg": "FTM"
+                },
+                "token1Reserve": "55159563.366045",
+                "token2Reserve": "55801274.142856796118828366",
+                "timestamp": 1651114740,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        }
+    ],
+    "optimalVol": 3870.976356804503,
+    "optimalDelta": 74.55275302927112,
+    "thresholdDelta": 15,
+    "swapPrice": 1.038889761869173,
+    "liquidity": 41842664178.40254,
+    "arbFactor": 1.0327245423344977,
+    "maxInputVol": 409.85792142730105,
+    "numNetworks": 1,
+    "optArbInputVol": 409.85792142730105,
+    "optArbDelta": 15.072765971057834,
+    "optArbFactor": 0.9980731760338226,
+    "deltaGainRatio": 1.0048510647371889
+}

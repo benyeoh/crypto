@@ -1,5 +1,12 @@
 import { ethers } from "ethers";
 
+// Saves 2 calls to getGasPrice() and getBlock() in ethers.js
+const fakeGasFees = {
+    gasPrice: 15000000000
+    // maxPriorityFeePerGas: 15000000000,
+    // maxFeePerGas: 15000000000 * 2,
+};
+
 export abstract class FactoryContract {
     abstract getPair(addr1: string, addr2: string): Promise<string>;
 }
@@ -28,8 +35,8 @@ export class UniV2Factory extends FactoryContract {
             provider)
     }
 
-    getPair(addr1: string, addr2: string): Promise<string> { return this.contract.getPair(addr1, addr2); }
-}
+    getPair(addr1: string, addr2: string): Promise<string> { return this.contract.getPair(addr1, addr2, fakeGasFees); }
+};
 
 export class UniV2Pair extends PairContract {
     private contract: ethers.Contract;
@@ -77,7 +84,7 @@ export class UniV2Pair extends PairContract {
             provider)
     }
 
-    token0(): Promise<string> { return this.contract.token0(); }
-    token1(): Promise<string> { return this.contract.token1(); }
-    getReserves(): Promise<any> { return this.contract.getReserves(); }
-}
+    token0(): Promise<string> { return this.contract.token0(fakeGasFees); }
+    token1(): Promise<string> { return this.contract.token1(fakeGasFees); }
+    getReserves(): Promise<any> { return this.contract.getReserves(fakeGasFees); }
+};

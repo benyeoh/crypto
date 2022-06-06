@@ -43,26 +43,59 @@ var Traverser = /** @class */ (function () {
             userData: null,
             depth: 0
         };
-        queue.add(newPath);
+        // For now we force the 1st node to always be the same startNodeID
+        // although we can probably just use the pegged nodes as well
+        var curPath = newPath;
+        for (var i = 0; i < curPath.node.edges.length; i++) {
+            var edge = curPath.node.edges[i];
+            var nextNode = edge.nodeA;
+            if (curPath.node === edge.nodeA) {
+                nextNode = edge.nodeB;
+            }
+            var _a = this.onTraverse(curPath, nextNode, edge), cost = _a.cost, userData = _a.userData;
+            if (cost !== null) {
+                newPath = {
+                    prev: curPath,
+                    edge: edge,
+                    node: nextNode,
+                    costsSoFar: curPath.costsSoFar + cost,
+                    userData: userData,
+                    depth: curPath.depth + 1
+                };
+                queue.add(newPath);
+            }
+        }
+        // queue.add(newPath);
         while (!queue.isEmpty()) {
-            var curPath = queue.poll();
-            for (var i = 0; i < curPath.node.edges.length; i++) {
-                var edge = curPath.node.edges[i];
-                var nextNode = edge.nodeA;
-                if (curPath.node === edge.nodeA) {
-                    nextNode = edge.nodeB;
-                }
-                var _a = this.onTraverse(curPath, nextNode, edge), cost = _a.cost, userData = _a.userData;
-                if (cost !== null) {
-                    newPath = {
-                        prev: curPath,
-                        edge: edge,
-                        node: nextNode,
-                        costsSoFar: curPath.costsSoFar + cost,
-                        userData: userData,
-                        depth: curPath.depth + 1
-                    };
-                    queue.add(newPath);
+            curPath = queue.poll();
+            var curNodeInclPegs = void 0;
+            if (curPath.node.data.peg) {
+                // This includes all pegged nodes, incl the original
+                curNodeInclPegs = graph.peggedNodes.get(curPath.node.data.peg);
+            }
+            else {
+                curNodeInclPegs = [curPath.node];
+            }
+            for (var n = 0; n < curNodeInclPegs.length; n++) {
+                var curNode = curNodeInclPegs[n];
+                for (var i = 0; i < curNode.edges.length; i++) {
+                    var edge = curNode.edges[i];
+                    var nextNode = edge.nodeA;
+                    if (curNode === edge.nodeA) {
+                        nextNode = edge.nodeB;
+                    }
+                    var _b = this.onTraverse(curPath, nextNode, edge), cost = _b.cost, userData = _b.userData;
+                    if (cost !== null) {
+                        newPath = {
+                            prev: curPath,
+                            edge: edge,
+                            node: nextNode,
+                            costsSoFar: curPath.costsSoFar + cost,
+                            userData: userData,
+                            depth: curPath.depth + 1
+                        };
+                        queue.add(newPath);
+                    }
                 }
             }
         }

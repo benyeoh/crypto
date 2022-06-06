@@ -1,0 +1,137 @@
+{
+    "USDC": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 20.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "DAI": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 20.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "MIM": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 20.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "USDT": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 20.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "FRAX": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 20.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "ETH": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 0.007,
+            "minLiquidity": 0.1,
+            "maxPathLen": 3
+        }
+    },
+    "BTC": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 0.0005,
+            "minLiquidity": 0.01,
+            "maxPathLen": 3
+        }
+    },
+    "FTM": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 15.0,
+            "minLiquidity": 10,
+            "maxPathLen": 3
+        }
+    },
+    "LINK": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ],
+        "trade": {
+            "minDelta": 1.5,
+            "minLiquidity": 5.0,
+            "maxPathLen": 3
+        }
+    },
+    "*": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            "gemini",
+            "binancesc"
+        ]
+    }
+}

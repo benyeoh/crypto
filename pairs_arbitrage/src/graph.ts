@@ -12,16 +12,19 @@ export class Node {
 export class Graph {
     nodes: Map<string, Node>;
     edges: Map<string, Edge>;
+    peggedNodes: Map<string, Node[]>;
 
     constructor() {
         this.nodes = new Map<string, Node>();
         this.edges = new Map<string, Edge>();
+        this.peggedNodes = new Map<string, Node[]>();
     }
 }
 
 export function updateGraphFromPairs(pairsInfo, graph: Graph) {
     let nodes = graph.nodes;
     let edges = graph.edges;
+    let peggedNodes = graph.peggedNodes;
 
     let networkID = pairsInfo.name + " (" + pairsInfo.network + ")";
 
@@ -38,6 +41,15 @@ export function updateGraphFromPairs(pairsInfo, graph: Graph) {
                     edges: new Array<Edge>()
                 };
                 nodes.set(pair["token1"].name, nodeA);
+                if (nodeA.data.peg !== null) {
+                    let peggedNodeArray = peggedNodes.get(nodeA.data.peg);
+                    if (!peggedNodeArray) {
+                        peggedNodeArray = [];
+                        peggedNodes.set(nodeA.data.peg, peggedNodeArray);
+                    }
+
+                    peggedNodeArray.push(nodeA);
+                }
             }
 
             if (!nodeB) {
@@ -46,6 +58,15 @@ export function updateGraphFromPairs(pairsInfo, graph: Graph) {
                     edges: new Array<Edge>()
                 };
                 nodes.set(pair["token2"].name, nodeB);
+                if (nodeB.data.peg !== null) {
+                    let peggedNodeArray = peggedNodes.get(nodeB.data.peg);
+                    if (!peggedNodeArray) {
+                        peggedNodeArray = [];
+                        peggedNodes.set(nodeB.data.peg, peggedNodeArray);
+                    }
+
+                    peggedNodeArray.push(nodeB);
+                }
             }
 
             let edgePair = {
@@ -60,6 +81,7 @@ export function updateGraphFromPairs(pairsInfo, graph: Graph) {
             edges.set(edgeID, edge);
             nodeA.edges.push(edge);
             nodeB.edges.push(edge);
+
         }
     }
 }   

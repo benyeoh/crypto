@@ -1,0 +1,62 @@
+{
+    "arbitrum": {
+        "rpc": "https://arbitrum-mainnet.infura.io/v3/6bcbb57004284277a354afb84fddda50", // infura
+        "swapper": "0x95d08aa97F4aa9c50D5e9DB4AE629a649367c5B3",
+        "gasFetcher": {
+            "gasPriceLimit": 2000000000
+        },
+        "overrides": {
+            "type": 0,
+            //"gasPrice": 1000000000, // 1 gwei
+            "gasLimit": 3000000
+        }
+    },
+    "polygon": {
+        "rpc": "https://polygon-mainnet.g.alchemy.com/v2/JHYlcNi99cWxxt5nvtmb1LR1qyITaYVT", // (alchemy)
+        "swapper": "0x6d04C565e366E9ec65a1FDf62Cc4B95EeaC39C16",
+        "overrides": {
+            "maxFeePerGas": 1000000000000, // 1000 gwei
+            "maxPriorityFeePerGas": 150000000000, // 150 gwei
+            "gasLimit": 1000000
+        }
+    },
+    "fantom": {
+        "rpc": "https://nd-644-562-472.p2pify.com/16b2d3daafe70fa84aaa5682883c1227", //  (chainstack - 3mil requests per month)"
+        "swapper": "0xBb3C59596CD69484B6eAF33c643C2d740f2bEb76",
+        "gasFetcher": {
+            "gasPriceLimit": 4000000000000
+        },
+        "overrides": {
+            "type": 0,
+            //"gasPrice": 2000000000000, // 2000 gwei
+            "gasLimit": 5000000
+        }
+    },
+    "avalanche": {
+        "rpc": "https://api.avax.network/ext/bc/C/rpc", //"https://speedy-nodes-nyc.moralis.io/0addbe156c5d6b97351c65cb/avalanche/mainnet", //  (moralis)"
+        "swapper": "0xCb4F924d62857d381dECff6F0d9af03Bada75Af1",
+        "overrides": {
+            "maxFeePerGas": 150000000000, // 150 gwei
+            "maxPriorityFeePerGas": 5000000000, // 5 gwei
+            "gasLimit": 5000000
+        }
+    },
+
+
+    // "binancesc": {
+    //     "rpc": "https://speedy-nodes-nyc.moralis.io/0addbe156c5d6b97351c65cb/bsc/mainnet" // moralis
+    // }
+
+    // trades: {
+    //     "coins": {
+    //         "USDC": {
+    //             "minDeltaThreshold": 5.0,
+    //         },
+
+    //         "ETH": {
+    //             "minDeltaThreshold": 0.001643,
+    //         }
+
+    //     }
+    // }
+}

@@ -1,0 +1,19 @@
+{
+    "arbitrum": {
+        "rpc": "https://arbitrum-rinkeby.infura.io/v3/6bcbb57004284277a354afb84fddda50",
+        "multicall": "0xcF86F018d36186747CBC6d1bfCB4ca428d72C200",
+        "swapper": "0xE1B49C9a70ACc43E576B873214e4f107E56eB478"
+    },
+    "polygon": {
+        "rpc": "https://rpc-mumbai.matic.today",
+        "multicall": "0xcF86F018d36186747CBC6d1bfCB4ca428d72C200",
+        "swapper": "0xE1B49C9a70ACc43E576B873214e4f107E56eB478",
+        "gasPrice": 100000000000
+    },
+    "fantom": {
+        "rpc": "https://rpc.testnet.fantom.network",
+        "multicall": "0xcF86F018d36186747CBC6d1bfCB4ca428d72C200",
+        "swapper": "0xE1B49C9a70ACc43E576B873214e4f107E56eB478",
+        "gasPrice": 300000000000
+    }
+}

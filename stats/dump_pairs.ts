@@ -7,6 +7,7 @@ import { program } from "commander";
 import { parseTradePaths } from "./src/parser";
 
 program.option('-i, --inputDir <path to input dir>', "Input directory path containing all coin trades");
+program.option('-o, --output <path to output file>', "Output path containing all opposite trades");
 program.parse()
 const options = program.opts()
 

@@ -15,33 +15,43 @@ export function findTrades(pairsList, coinID, maxPathLen, minDelta, minLiquidity
         graph.updateGraphFromPairs(pairsList[i], pairsGraph);
     }
 
+    //let start = Date.now();
     traverser.traverse(pairsGraph, coinID);
     let paths = traverser.paths;
+    //let elapsed = Date.now() - start;
 
     // Find potentially profitable paths
+    //start = Date.now();
     let profitPaths = [];
     for (let i = 0; i < paths.length; i++) {
-        let model = new cpmm.CPMM(paths[i]);
-        let swapPrice = model.computeSwapPrice();
+        let model = new cpmm.ApproxCPMM(paths[i]);
         let optVol = model.computeOptimalVolume();
         let optDelta = model.computeDelta(optVol);
         let liquidity = model.computeLiquidity();
+        // console.log(`${coinID} ${optDelta} ${liquidity} ${optVol}`);
 
         if (optVol > 0 && liquidity > minLiquidity && optDelta > minDelta) {
+            let arbFactor = model.computeArbitrageFactor(optVol);
+            let swapPrice = model.computeSwapPrice();
             let pathSpec = {
                 path: paths[i],
                 optimalVol: optVol,
                 optimalDelta: optDelta,
+                thresholdDelta: minDelta,
                 swapPrice: swapPrice,
-                liquidity: liquidity
+                liquidity: liquidity,
+                arbFactor: arbFactor
             };
 
-            profitPaths.push(pathSpec)
+            profitPaths.push(pathSpec);
         }
     }
+    //let elapsed2 = Date.now() - start;
+    //console.log(`${coinID} ---------------------------------- 1: ${elapsed}, 2: ${elapsed2}, paths: ${paths.length}`)
 
     // Sort according to ascending delta
     profitPaths.sort((a, b) => a.optimalDelta - b.optimalDelta);
+    //console.log(`${coinID} ---------------------------------- Number paths: ${profitPaths.length}`)
     return profitPaths;
 }
 

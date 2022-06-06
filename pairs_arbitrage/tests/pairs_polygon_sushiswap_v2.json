@@ -1,0 +1,1748 @@
+{
+    "name": "sushiswap v2",
+    "factory": "0xc35DADB65012eC5796536bD9864eD8773aBc74C4",
+    "network": "polygon",
+    "pairs": [
+        {
+            "addr": "0x4B1F1e2435A9C96f7330FAea190Ef6A7C8D70001",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "1511044.227898",
+            "token2Reserve": "1513863.189446",
+            "timestamp": 1649078596,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xCD578F016888B57F1b1e3f887f392F0159E26747",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "1482492.113009",
+            "token2Reserve": "1483282.589778494423358243",
+            "timestamp": 1649077302,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xD02b870c556480491c70AaF98C297fddd93F6f5C",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.00689049",
+            "token2Reserve": "317.433622",
+            "timestamp": 1649076630,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x34965ba0ac2451A34a0471F04CCa3F990b8dea27",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "7909268.539648",
+            "token2Reserve": "2284.548611390506668951",
+            "timestamp": 1649078624,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x82D5BcC22856a3316f993340662D6253b3bC3f76",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "FRAX",
+                "addr": "0x45c32fa6df82ead1e2ef74d17b76547eddfaff89",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "3081021.978989",
+            "token2Reserve": "3093171.353859579042223279",
+            "timestamp": 1649075493,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x8cbD92bD3A7AB96C9c77534b4FE44C85A0AfcAF6",
+            "token1": {
+                "name": "HEX",
+                "addr": "0x23d29d30e35c5e8d321e1dc9a8a61bfd846d4c5c",
+                "decimals": 8,
+                "peg": null
+            },
+            "token2": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "898.92943832",
+            "token2Reserve": "138.110808",
+            "timestamp": 1649071248,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xcd353F79d9FADe311fC3119B841e1f456b54e858",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "1135061.736178366870990727",
+            "token2Reserve": "1866256.142984",
+            "timestamp": 1649078600,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x8bC8e9F621EE8bAbda8DC0E6Fc991aAf9BF8510b",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token1Reserve": "57.12963",
+            "token2Reserve": "3.208093482168876394",
+            "timestamp": 1649038045,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x634EAAac7C6149e79dF7FD27E32924eb0a1Fa761",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "FTM",
+                "addr": "0xc9c1c1c20b3658f8787cc2fd702267791f224ce1",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.000028",
+            "token2Reserve": "0.00017722898817356",
+            "timestamp": 1644671210,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x7c5b028ea6a2a123BB1c8be5d3d2935d4532961B",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token1Reserve": "365.379834",
+            "token2Reserve": "30.695549211874244312",
+            "timestamp": 1649062873,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xF19c216BdA3Ceb9D3649B70D7984E09d260C910C",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.000001",
+            "token2Reserve": "0.000000001050047165",
+            "timestamp": 1630598402,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x5fcb390B4422f4FF7940c23618A62BF5f69658A8",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "ADDY",
+                "addr": "0xc3fdbadc7c795ef1d6ba111e06ff8f16a20ea539",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "3932.917658",
+            "token2Reserve": "5856.421436828779157024",
+            "timestamp": 1649073331,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x982c529Fd47CBa8f627c2aBE30286c69aB593501",
+            "token1": {
+                "name": "CRV",
+                "addr": "0x172370d5cd63279efa6d502dab29171933a610af",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token2": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "2.65644666374708659",
+            "token2Reserve": "7.789969",
+            "timestamp": 1649043393,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xE15E9d2a5af5c1d3524bBC594DDc4a7D80aD27CD",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "1088.340423766401753252",
+            "token2Reserve": "4719.277535",
+            "timestamp": 1649077332,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x3E9a0586088caEb2aDFf32B0C06CfA44151c7a5B",
+            "token1": {
+                "name": "USDC",
+                "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "262.996906",
+            "token2Reserve": "1.116119177873224515",
+            "timestamp": 1649076684,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x3B31Bb4b6bA4f67F4EF54e78bCb0AAa4f53DC7fF",
+            "token1": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "2237.550158404484771546",
+            "token2Reserve": "2238.564757",
+            "timestamp": 1649005203,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xb1dD5322BE07fb2A40ae7fbbBac96781Ca2B0602",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.0000167",
+            "token2Reserve": "0.769702",
+            "timestamp": 1648934356,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xc2755915a85C6f6c1C0F3a86ac8C058F11Caa9C9",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "483.825994513628021483",
+            "token2Reserve": "1674652.815785",
+            "timestamp": 1649078326,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x37B31aB9b66B0047e55d5d3158157287976318C5",
+            "token1": {
+                "name": "LRC",
+                "addr": "0x84e1670f61347cdaed56dcc736fb990fbb47ddc1",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.072836654927856479",
+            "token2Reserve": "0.001396",
+            "timestamp": 1649047449,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x2Bba4Ca23ACB160A58966bc8188Ca8a07b63237e",
+            "token1": {
+                "name": "HEX",
+                "addr": "0x23d29d30e35c5e8d321e1dc9a8a61bfd846d4c5c",
+                "decimals": 8,
+                "peg": null
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.00034447",
+            "token2Reserve": "0.000031",
+            "timestamp": 1638043839,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x55FF76BFFC3Cdd9D5FdbBC2ece4528ECcE45047e",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "20147.345037033344212502",
+            "token2Reserve": "33132.538811",
+            "timestamp": 1649078580,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x43C355d9cE77f91b7E1A314E258246D155100be9",
+            "token1": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.000030077359666534",
+            "token2Reserve": "0.000439",
+            "timestamp": 1648399630,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x1f7B93a86C393d7ff285332E77fdCa6c0dF2f249",
+            "token1": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.000620312164856191",
+            "token2Reserve": "0.006771",
+            "timestamp": 1646796581,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x336819AeB4202A70AdAff7F0DA9780A8e2Cdd5F4",
+            "token1": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.608886819335966786",
+            "token2Reserve": "0.299125",
+            "timestamp": 1648595207,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x5c26E61C6153805B073beb185319De61aDBDcB98",
+            "token1": {
+                "name": "CRV",
+                "addr": "0x172370d5cd63279efa6d502dab29171933a610af",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "817.319986921105990625",
+            "token2Reserve": "2317.221394",
+            "timestamp": 1649074261,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xF19144BC9B66bD9B999167B41cCb17D473419d1D",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token1Reserve": "39.532808868635391346",
+            "token2Reserve": "171.247805",
+            "timestamp": 1649077660,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xa543Ba3fd79a03788e5521a0Ce48B3F2Bf93b2c1",
+            "token1": {
+                "name": "USDT",
+                "addr": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+                "decimals": 6,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "41.675881",
+            "token2Reserve": "0.172583151525544858",
+            "timestamp": 1649004273,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x7a1d5E67c3a273274766E241363E3E98e721E456",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.27484128",
+            "token2Reserve": "12676.682147448847437462",
+            "timestamp": 1649077486,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x6FF62bfb8c12109E8000935A6De54daD83a4f39f",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "696.878217888958345979",
+            "token2Reserve": "2413974.747489355168964504",
+            "timestamp": 1649078144,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x16d4618717B0A3C7D7Cc261110e61A02E7FB0b73",
+            "token1": {
+                "name": "FRAX",
+                "addr": "0x45c32fa6df82ead1e2ef74d17b76547eddfaff89",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.000000000000001",
+            "token2Reserve": "0.000000000000001001",
+            "timestamp": 1646870692,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x8929D3FEa77398F64448c85015633c2d6472fB29",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "2942.428110126560502394",
+            "token2Reserve": "4838.798219811038704941",
+            "timestamp": 1649078556,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xb97977b27A3EA8b4CEed1C738ECa671A0dDAd5e8",
+            "token1": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.002827404788095331",
+            "token2Reserve": "0.046079181189960154",
+            "timestamp": 1649009497,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x519890fb51b1b10a114C97AA03B0985D896B6764",
+            "token1": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token1Reserve": "2.906269919204279954",
+            "token2Reserve": "0.233414006735512185",
+            "timestamp": 1648877664,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xf1C3A3B771338Ef629CbBaE519C2A1F41D256E1c",
+            "token1": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "SAND",
+                "addr": "0xbbba073c31bf03b8acf7c28ef0738decf3695683",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "55.989479386207160041",
+            "token2Reserve": "15.899523214316991053",
+            "timestamp": 1648979924,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xa7461E0142Bb52CF35059382Ddd9aD2D96a84367",
+            "token1": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.001785680535619678",
+            "token2Reserve": "0.001029947722462573",
+            "timestamp": 1648123519,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x5E8f882dD0d062e2d81bcBe4EC61d7AEaBf80c74",
+            "token1": {
+                "name": "MKR",
+                "addr": "0x6f7c932e7684666c9fd1d44527765433e01ff61d",
+                "decimals": 18,
+                "peg": "MKR"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "5.865294392290619809",
+            "token2Reserve": "13436.532306852173686746",
+            "timestamp": 1649075117,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x5F3EeCeeaD64ee34b78e80cD574496E82e537541",
+            "token1": {
+                "name": "CRV",
+                "addr": "0x172370d5cd63279efa6d502dab29171933a610af",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "0.028300413471863214",
+            "token2Reserve": "0.075644591643668452",
+            "timestamp": 1648699466,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x177E42F6B3da3ffdda3DCbB6010f00a380C3CB05",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "74.074750624632714866",
+            "token2Reserve": "324.731469611782739938",
+            "timestamp": 1649067146,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xdc22C3C23d94CF60ce61F7ac73c05CaAb0ed4668",
+            "token1": {
+                "name": "DAI",
+                "addr": "0x8f3cf7ad23cd3cadbd9735aff958023239c6a063",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "63.041321402565409061",
+            "token2Reserve": "0.261603498986848997",
+            "timestamp": 1649062754,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xE62Ec2e799305E0D367b0Cc3ee2CdA135bF89816",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "302.61089658",
+            "token2Reserve": "4018.069968132431629758",
+            "timestamp": 1649078116,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xd3FAB6aD4Fb6dc235D4D0810A7D70133e1e697B0",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "COMP",
+                "addr": "0x8505b9d2254a7ae468c0e9dd10ccea3a837aef5c",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.00005423",
+            "token2Reserve": "0.014706194841371419",
+            "timestamp": 1649030037,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x8531c4e29491fE6e5e87AF6054FC20FcCf0b4290",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token1Reserve": "629.704888246047677211",
+            "token2Reserve": "0.02257114",
+            "timestamp": 1649076546,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x67A81a470cC17257363e38AFC412A45B756fC6F9",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token1Reserve": "0.00004848",
+            "token2Reserve": "0.134490424753785882",
+            "timestamp": 1648492654,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x6B7cF1d871e5E736a677961E718F1B0e631c2ec4",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.00000001",
+            "token2Reserve": "0.000000026417655244",
+            "timestamp": 1627702933,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x3BfFD4Ca16197Ad48DC610c41a022664905b7fFC",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token1Reserve": "115.749055383823643717",
+            "token2Reserve": "0.0110112",
+            "timestamp": 1649072999,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xba9C0286FD6D2535c5b3CCa5353743A8BFe45241",
+            "token1": {
+                "name": "BTC",
+                "addr": "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6",
+                "decimals": 8,
+                "peg": "BTC"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "0.00000012",
+            "token2Reserve": "0.000030602654614754",
+            "timestamp": 1639142955,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x9021A31062A1D9C9C35d632Ed54a9d923e46809F",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "COMP",
+                "addr": "0x8505b9d2254a7ae468c0e9dd10ccea3a837aef5c",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "4.339892427153937185",
+            "token2Reserve": "94.514758935205427124",
+            "timestamp": 1649076896,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xdFA3dDd1807DB8E4B4851D2E5421374e433a2983",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "YFI",
+                "addr": "0xda537104d6a5edd53c6fbba9a898708e465260b6",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.190634411099159827",
+            "token2Reserve": "0.028485596419254537",
+            "timestamp": 1649039135,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xc4e595acDD7d12feC385E5dA5D43160e8A0bAC0E",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "5214612.648538751153598801",
+            "token2Reserve": "2471.817804049585111046",
+            "timestamp": 1649078592,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x74D23F21F780CA26B47Db16B0504F2e3832b9321",
+            "token1": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "66932.089719345921694548",
+            "token2Reserve": "335.662348933724029043",
+            "timestamp": 1649078310,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xc56060aF39152C614fA67E169c0DD1809a886e4F",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token1Reserve": "0.550202459003783821",
+            "token2Reserve": "159.49419416466459721",
+            "timestamp": 1649076562,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x91A94765dF00f4C148364b2a2C624A854C6B3a1b",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "SAND",
+                "addr": "0xbbba073c31bf03b8acf7c28ef0738decf3695683",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.000014404172165822",
+            "token2Reserve": "0.013611701676675916",
+            "timestamp": 1648505995,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x1cedA73C034218255F50eF8a2c282E6B4c301d60",
+            "token1": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "956105.91189167970759882",
+            "token2Reserve": "135.645940300127943335",
+            "timestamp": 1649077012,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xbf61E1D82bD440cb9da11d325c046f029a663890",
+            "token1": {
+                "name": "MKR",
+                "addr": "0x6f7c932e7684666c9fd1d44527765433e01ff61d",
+                "decimals": 18,
+                "peg": "MKR"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "7.739057733935320841",
+            "token2Reserve": "5.082529064243362437",
+            "timestamp": 1649078242,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xB6d9a4649c579B8768f1cb55e9dd6Ba99581e4a9",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "ADDY",
+                "addr": "0xc3fdbadc7c795ef1d6ba111e06ff8f16a20ea539",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.221266277711490904",
+            "token2Reserve": "1143.967995471372303684",
+            "timestamp": 1649072203,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x396E655C309676cAF0acf4607a868e0CDed876dB",
+            "token1": {
+                "name": "CRV",
+                "addr": "0x172370d5cd63279efa6d502dab29171933a610af",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "209575.674209421592332039",
+            "token2Reserve": "171.511437749284605866",
+            "timestamp": 1649078422,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xb5846453B67d0B4b4Ce655930Cf6E4129F4416D7",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token1Reserve": "43251.370418018146176231",
+            "token2Reserve": "53.8559362552990888",
+            "timestamp": 1649078116,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x2813D43463C374a680f235c428FB1D7f08dE0B69",
+            "token1": {
+                "name": "ETH",
+                "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "peg": "ETH"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "1045.971077789745337359",
+            "token2Reserve": "15438.985016709663706691",
+            "timestamp": 1649077874,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xE7C714DD3dD70eE04EB69A856655765454E77c88",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "FRAX",
+                "addr": "0x45c32fa6df82ead1e2ef74d17b76547eddfaff89",
+                "decimals": 18,
+                "peg": "USD"
+            },
+            "token1Reserve": "342506.467202884291088637",
+            "token2Reserve": "564076.87086893175831381",
+            "timestamp": 1649078476,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xf97a5C1a1F4e95aEa78842E60060942368356C6E",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "LRC",
+                "addr": "0x84e1670f61347cdaed56dcc736fb990fbb47ddc1",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.000017597703706501",
+            "token2Reserve": "0.006066425128393657",
+            "timestamp": 1649047449,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xF8326C8aED2d21364fdD7D4ffc0C771755d8F55c",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "COMP",
+                "addr": "0x8505b9d2254a7ae468c0e9dd10ccea3a837aef5c",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "2.287217939123544981",
+            "token2Reserve": "0.023312104928550943",
+            "timestamp": 1649064281,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xc4A681264F93B8DB5d554EFb4de6eE011Ada091b",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "YFI",
+                "addr": "0xda537104d6a5edd53c6fbba9a898708e465260b6",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.739070063092266825",
+            "token2Reserve": "0.000057093864594723",
+            "timestamp": 1648724484,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x20BD07dDD9a9ceeDd127AAeBaFAef2dB00E53C33",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "YFI",
+                "addr": "0xda537104d6a5edd53c6fbba9a898708e465260b6",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.000100461703998267",
+            "token2Reserve": "0.000000020407550786",
+            "timestamp": 1624519440,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x066a8C420A477520ABCD92791d2296A0578f5c3D",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "HEX",
+                "addr": "0x23d29d30e35c5e8d321e1dc9a8a61bfd846d4c5c",
+                "decimals": 8,
+                "peg": null
+            },
+            "token1Reserve": "4.70143625436123927",
+            "token2Reserve": "52.53239897",
+            "timestamp": 1649043915,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x9A1106266E154C58c99FaC91D00ED4dcc2ABA676",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "HEX",
+                "addr": "0x23d29d30e35c5e8d321e1dc9a8a61bfd846d4c5c",
+                "decimals": 8,
+                "peg": null
+            },
+            "token1Reserve": "0.031090502556995571",
+            "token2Reserve": "0.68092864",
+            "timestamp": 1644093470,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x8Cc1156dAD03D758bFF264eCE9F3129Bd9395270",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "CRO",
+                "addr": "0xada58df0f643d959c2a47c9d4d4c1a4defe3f11c",
+                "decimals": 8,
+                "peg": null
+            },
+            "token1Reserve": "0.009898294534538282",
+            "token2Reserve": "0.00016362",
+            "timestamp": 1648845234,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x68ccE7049013ca8df91CD512ceFEe8FC0bb8d926",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token1Reserve": "244.809737828426811433",
+            "token2Reserve": "23.107190044135220833",
+            "timestamp": 1649078352,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x3B4F1A04FB1A171EF136D742cF4A77b5bB7e28C1",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "FTM",
+                "addr": "0xc9c1c1c20b3658f8787cc2fd702267791f224ce1",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.008091552322163689",
+            "token2Reserve": "0.051775052549349378",
+            "timestamp": 1647198687,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x7FAe0648684ec375176E2d0F171cA9814798D920",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token1Reserve": "10.182663750065460625",
+            "token2Reserve": "1.427592208883857516",
+            "timestamp": 1648993139,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x1fC05157e66300377b637E93262B355d405F71c6",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "SAND",
+                "addr": "0xbbba073c31bf03b8acf7c28ef0738decf3695683",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "3010.063599042278277183",
+            "token2Reserve": "1423.792809474651979882",
+            "timestamp": 1649076542,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x8e77380906692991888978626CF703A4635730bE",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "115.507111208637056796",
+            "token2Reserve": "385.084416393108089187",
+            "timestamp": 1649071850,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x886Ba8107b3FF9FC71834c33B220c9410ec1aBFF",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "ADDY",
+                "addr": "0xc3fdbadc7c795ef1d6ba111e06ff8f16a20ea539",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "25.703871199295679612",
+            "token2Reserve": "63.681139167435663409",
+            "timestamp": 1649007475,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x140EA3fae80A2732eBc4DE0511FF84EF1A575217",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "CRV",
+                "addr": "0x172370d5cd63279efa6d502dab29171933a610af",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token1Reserve": "114.770522423676988739",
+            "token2Reserve": "67.058404974672277389",
+            "timestamp": 1649072777,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x597A9bc3b24C2A578CCb3aa2c2C62C39427c6a49",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token1Reserve": "15021.599340345014272783",
+            "token2Reserve": "39417.663492227552689182",
+            "timestamp": 1649078478,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x7d88D931504D04BFBEE6F9745297A93063CAb24c",
+            "token1": {
+                "name": "MATIC",
+                "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                "decimals": 18,
+                "peg": "MATIC"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "1710.156754327675929087",
+            "token2Reserve": "11.981862521419760826",
+            "timestamp": 1649074923,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xe5815Eab3519856E1105508825Df07a893F6a436",
+            "token1": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token2": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.00000033930631053",
+            "token2Reserve": "0.000011011253505528",
+            "timestamp": 1630599304,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x5e365dB1a7213c0c5739129D80e95E64e6ED088e",
+            "token1": {
+                "name": "CRV",
+                "addr": "0x172370d5cd63279efa6d502dab29171933a610af",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token2": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token1Reserve": "0.000462236782744483",
+            "token2Reserve": "0.000122286837469571",
+            "timestamp": 1640437107,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x4eab9556BD46F552691fe75c16d1C2eD1622dF51",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token1Reserve": "158.258370950718426852",
+            "token2Reserve": "39.568692497182934394",
+            "timestamp": 1649073151,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x386d5B630Abe3D0B57f1610Ffb171042Ca7C2593",
+            "token1": {
+                "name": "LINK",
+                "addr": "0x53e0bca35ec356bd5dddfebbd1fc0fd03fabad39",
+                "decimals": 18,
+                "peg": "LINK"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "7.562890700800440147",
+            "token2Reserve": "0.564386976416395051",
+            "timestamp": 1649006719,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x54A144F6070498b91589cAbcb479878d0EE82c1b",
+            "token1": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token1Reserve": "0.000884258812345308",
+            "token2Reserve": "0.000038019211096278",
+            "timestamp": 1636392898,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x7B415C1C0e8e17f26105a1d1FB50D46bDb9643bc",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token1Reserve": "1.495868950164621256",
+            "token2Reserve": "0.56085065535664317",
+            "timestamp": 1648596347,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x580850020637A4478a40B757006BD1Dc70A50E9E",
+            "token1": {
+                "name": "UNI",
+                "addr": "0xb33eaad8d922b1083446dc23f610c2567fb5180f",
+                "decimals": 18,
+                "peg": "UNI"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "2.057478729017504008",
+            "token2Reserve": "0.10188879538347444",
+            "timestamp": 1649071760,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x23329c0Af762cbAa7cD769DcCB7544ab398B6cbD",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.000002881738318081",
+            "token2Reserve": "0.000038317152651533",
+            "timestamp": 1632455222,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xc56237361838dC0884Ed73EA7e011d69662Ff196",
+            "token1": {
+                "name": "GRT",
+                "addr": "0x5fe2b58c013d7601147dcdd68c143a77499f5531",
+                "decimals": 18,
+                "peg": null
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "0.000000000000020755",
+            "token2Reserve": "0.000000000000000049",
+            "timestamp": 1630599362,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x8E0Ac12107592363E2Cc77C6C9D78Dc590060c8A",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "ADDY",
+                "addr": "0xc3fdbadc7c795ef1d6ba111e06ff8f16a20ea539",
+                "decimals": 18,
+                "peg": null
+            },
+            "token1Reserve": "0.000006653117873533",
+            "token2Reserve": "0.00001308811125522",
+            "timestamp": 1643340646,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0xf2FFA11A11695b23BD7A26d587ee28039576D60F",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "CRV",
+                "addr": "0x172370d5cd63279efa6d502dab29171933a610af",
+                "decimals": 18,
+                "peg": "CRV"
+            },
+            "token1Reserve": "0.039632253018216052",
+            "token2Reserve": "0.05428289781548983",
+            "timestamp": 1647285430,
+            "rateA": 0.997,
+            "rateB": 1
+        },
+        {
+            "addr": "0x429b932FaB6F85Aa41abdF65C0095c910D3a65dd",
+            "token1": {
+                "name": "SUSHI",
+                "addr": "0x0b3f868e0be5597d5db7feb59e1cadbb0fdda50a",
+                "decimals": 18,
+                "peg": "SUSHI"
+            },
+            "token2": {
+                "name": "AAVE",
+                "addr": "0xd6df932a45c0f255f85145f286ea0b292b21c90b",
+                "decimals": 18,
+                "peg": "AAVE"
+            },
+            "token1Reserve": "1.4886772553492862",
+            "token2Reserve": "0.027083940757752831",
+            "timestamp": 1648831778,
+            "rateA": 0.997,
+            "rateB": 1
+        }
+    ],
+    "timestamp": 1649078629431
+}

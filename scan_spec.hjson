@@ -1,0 +1,324 @@
+{
+    "USDC": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+         //   "gemini",
+         //   "binancesc",
+            "avalanche",
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "BNB": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+         //   "gemini",
+        //    "binancesc",
+            "avalanche",
+        ],
+        "trade": {
+            "minDelta": 0.028485959999999998,
+            "minLiquidity": 5,
+            "maxPathLen": 3
+        }
+    },
+    "DAI": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+          //  "gemini",
+         //   "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "MIM": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+         //   "gemini",
+         //   "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "USDT": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+         //   "gemini",
+         //   "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "FRAX": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+         //   "gemini",
+         //   "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "MIMATIC": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+         //   "gemini",
+         //   "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "ETH": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+          //  "gemini",
+          //  "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 0.0042,
+            "minLiquidity": 0.1,
+            "maxPathLen": 3
+        }
+    },
+    "WETH.e": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+          //  "gemini",
+          //  "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 0.0042,
+            "minLiquidity": 0.1,
+            "maxPathLen": 3
+        }
+    },
+    // "BTC": {
+    //     "availability": [
+    //         "arbitrum",
+    //         "fantom",
+    //         "polygon",
+    //         "gemini",
+    //         "binancesc",
+    //         "avalanche"
+    //     ],
+    //     "trade": {
+    //         "minDelta": 0.0003,
+    //         "minLiquidity": 0.01,
+    //         "maxPathLen": 3
+    //     }
+    // },
+    "FTM": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+           // "gemini",
+           // "binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 11.0,
+            "minLiquidity": 10,
+            "maxPathLen": 3
+        }
+    },
+    // "TOMB": {
+    //     "availability": [
+    //         "arbitrum",
+    //         "fantom",
+    //         "polygon",
+    //         //"gemini",
+    //         //"binancesc",
+    //         "avalanche"
+    //     ],
+    //     "trade": {
+    //         "minDelta": 11.0,
+    //         "minLiquidity": 10,
+    //         "maxPathLen": 3
+    //     }
+    // },
+    "USDC.e": {
+        "availability": [            
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "USDT.e": {
+        "availability": [            
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+    "DAI.e": {
+        "availability": [            
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 12.0,
+            "minLiquidity": 100.0,
+            "maxPathLen": 3
+        }
+    },
+
+    // "LINK": {
+    //      "availability": [
+    //         "arbitrum",
+    //         "fantom",
+    //         "polygon",
+    //         "gemini",
+    //         "binancesc",
+    //         "avalanche"
+    //     ],
+    //     "trade": {
+    //         "minDelta": 0.9,
+    //         "minLiquidity": 10,
+    //         "maxPathLen": 3
+    //     }
+    // },
+
+    // "MATIC": {  
+    //      "availability": [
+    //         "arbitrum",
+    //         "fantom",
+    //         "polygon",
+    //         "gemini",
+    //         "binancesc",
+    //         "avalanche"
+    //     ],
+    //     "trade": {
+    //         "minDelta": 9.0,
+    //         "minLiquidity": 10,
+    //         "maxPathLen": 3
+    //     }
+    // },
+
+    "SUSHI": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+           // "gemini",
+            //"binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 3.6,
+            "minLiquidity": 10,
+            "maxPathLen": 3
+        }
+    },
+
+    // "SPELL": {
+    //     "availability": [
+    //         "arbitrum",
+    //         "fantom",
+    //         "polygon",
+    //         "gemini",
+    //         "binancesc",
+    //         "avalanche"
+    //     ],
+    //     "trade": {
+    //         "minDelta": 2806.0,
+    //         "minLiquidity": 10,
+    //         "maxPathLen": 3
+    //     }
+    // },
+
+    // "GRT": {
+    //     "availability": [
+    //         "arbitrum",
+    //         "fantom",
+    //         "polygon",
+    //         "gemini",
+    //         "binancesc",
+    //         "avalanche"
+    //     ],
+    //     "trade": {
+    //         "minDelta": 6.0,
+    //         "minLiquidity": 100,
+    //         "maxPathLen": 3
+    //     }
+    // },
+
+    // "AAVE": {
+    //     "availability": [
+    //         "arbitrum",
+    //         "fantom",
+    //         "polygon",
+    //         //"gemini",
+    //         //"binancesc",
+    //         "avalanche"
+    //     ],
+    //     "trade": {
+    //         "minDelta": 0.0684,
+    //         "minLiquidity": 10,
+    //         "maxPathLen": 3
+    //     }
+    // },
+
+    "AVAX": {
+        "availability": [
+            "arbitrum",
+            "fantom",
+            "polygon",
+            //"gemini",
+            //"binancesc",
+            "avalanche"
+        ],
+        "trade": {
+            "minDelta": 0.1542,
+            "minLiquidity": 5,
+            "maxPathLen": 3
+        }
+    }
+}

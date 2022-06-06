@@ -1,0 +1,97 @@
+{
+    "path": [
+        {
+            "node": {
+                "name": "USDC",
+                "peg": "USD"
+            },
+            "edge": null
+        },
+        {
+            "node": {
+                "name": "ETH",
+                "peg": "ETH"
+            },
+            "edge": {
+                "addr": "0x905dfCD5649217c42684f23958568e533C711Aa3",
+                "token1": {
+                    "name": "ETH",
+                    "addr": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token2": {
+                    "name": "USDC",
+                    "addr": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token1Reserve": "9673.839258192654642555",
+                "token2Reserve": "32868911.718738",
+                "timestamp": 1648943511,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "sushiswap v2 (arbitrum)"
+            }
+        },
+        {
+            "node": {
+                "name": "FTM",
+                "peg": null
+            },
+            "edge": {
+                "addr": "0xf0702249F4D3A25cD3DED7859a165693685Ab577",
+                "token1": {
+                    "name": "FTM",
+                    "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token2": {
+                    "name": "ETH",
+                    "addr": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token1Reserve": "16982409.005723403046242127",
+                "token2Reserve": "7566.497348989007238872",
+                "timestamp": 1648943519,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        },
+        {
+            "node": {
+                "name": "MIM",
+                "peg": "USD"
+            },
+            "edge": {
+                "addr": "0x6f86e65b255c9111109d2D2325ca2dFc82456efc",
+                "token1": {
+                    "name": "FTM",
+                    "addr": "0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token2": {
+                    "name": "MIM",
+                    "addr": "0x82f0b8b456c1a451378467398982d4834b6829c1",
+                    "decimals": 18,
+                    "peg": "USD"
+                },
+                "token1Reserve": "3698219.011730404950477295",
+                "token2Reserve": "5697134.269598503154354929",
+                "timestamp": 1648943403,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "spookyswap v2 (fantom)"
+            }
+        }
+    ],
+    "optimalVol": 17198.385786335188,
+    "optimalDelta": 72.76656169103128,
+    "swapPrice": 1.0084799237164683,
+    "liquidity": 16613053084332.643,
+    "arbFactor": 1.0024508409093846
+}

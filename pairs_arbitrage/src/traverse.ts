@@ -38,28 +38,65 @@ abstract class Traverser {
             userData: null,
             depth: 0
         };
-        queue.add(newPath);
+
+        // For now we force the 1st node to always be the same startNodeID
+        // although we can probably just use the pegged nodes as well
+        let curPath: PathNode = newPath;
+        for (let i = 0; i < curPath.node.edges.length; i++) {
+            let edge: Edge = curPath.node.edges[i];
+            let nextNode = edge.nodeA;
+            if (curPath.node === edge.nodeA) {
+                nextNode = edge.nodeB;
+            }
+
+            let { cost, userData } = this.onTraverse(curPath, nextNode, edge);
+            if (cost !== null) {
+                newPath = {
+                    prev: curPath,
+                    edge: edge,
+                    node: nextNode,
+                    costsSoFar: curPath.costsSoFar + cost,
+                    userData: userData,
+                    depth: curPath.depth + 1
+                };
+                queue.add(newPath);
+            }
+
+        }
+
+        // queue.add(newPath);
 
         while (!queue.isEmpty()) {
-            let curPath: PathNode = queue.poll();
-            for (let i = 0; i < curPath.node.edges.length; i++) {
-                let edge: Edge = curPath.node.edges[i];
-                let nextNode = edge.nodeA;
-                if (curPath.node === edge.nodeA) {
-                    nextNode = edge.nodeB;
-                }
+            curPath = queue.poll();
+            let curNodeInclPegs;
+            if (curPath.node.data.peg) {
+                // This includes all pegged nodes, incl the original
+                curNodeInclPegs = graph.peggedNodes.get(curPath.node.data.peg);
+            } else {
+                curNodeInclPegs = [curPath.node];
+            }
 
-                let { cost, userData } = this.onTraverse(curPath, nextNode, edge);
-                if (cost !== null) {
-                    newPath = {
-                        prev: curPath,
-                        edge: edge,
-                        node: nextNode,
-                        costsSoFar: curPath.costsSoFar + cost,
-                        userData: userData,
-                        depth: curPath.depth + 1
-                    };
-                    queue.add(newPath);
+            for (let n = 0; n < curNodeInclPegs.length; n++) {
+                let curNode = curNodeInclPegs[n];
+                for (let i = 0; i < curNode.edges.length; i++) {
+                    let edge: Edge = curNode.edges[i];
+                    let nextNode = edge.nodeA;
+                    if (curNode === edge.nodeA) {
+                        nextNode = edge.nodeB;
+                    }
+
+                    let { cost, userData } = this.onTraverse(curPath, nextNode, edge);
+                    if (cost !== null) {
+                        newPath = {
+                            prev: curPath,
+                            edge: edge,
+                            node: nextNode,
+                            costsSoFar: curPath.costsSoFar + cost,
+                            userData: userData,
+                            depth: curPath.depth + 1
+                        };
+                        queue.add(newPath);
+                    }
                 }
 
             }
@@ -71,7 +108,7 @@ abstract class Traverser {
 
 export class BFSCycleTraverser extends Traverser {
     private maxDepth: number;
-    paths: Array<object>;
+    paths: Array<Array<object>>;
 
     constructor(maxDepth = 3) {
         super();

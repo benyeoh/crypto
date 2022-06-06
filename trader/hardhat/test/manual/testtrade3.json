@@ -1,0 +1,97 @@
+{
+    "path": [
+        {
+            "node": {
+                "name": "USDC",
+                "peg": "USD"
+            },
+            "edge": null
+        },
+        {
+            "node": {
+                "name": "ETH",
+                "peg": "ETH"
+            },
+            "edge": {
+                "addr": "0x905dfCD5649217c42684f23958568e533C711Aa3",
+                "token1": {
+                    "name": "ETH",
+                    "addr": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token2": {
+                    "name": "USDC",
+                    "addr": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token1Reserve": "9640.673408579091105659",
+                "token2Reserve": "33034024.496029",
+                "timestamp": 1648912863,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "sushiswap v2 (arbitrum)"
+            }
+        },
+        {
+            "node": {
+                "name": "MATIC",
+                "peg": null
+            },
+            "edge": {
+                "addr": "0xc4e595acDD7d12feC385E5dA5D43160e8A0bAC0E",
+                "token1": {
+                    "name": "MATIC",
+                    "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token2": {
+                    "name": "ETH",
+                    "addr": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                    "decimals": 18,
+                    "peg": "ETH"
+                },
+                "token1Reserve": "5196129.476441530612636995",
+                "token2Reserve": "2512.246175198792095971",
+                "timestamp": 1648912820,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "sushiswap v2 (polygon)"
+            }
+        },
+        {
+            "node": {
+                "name": "USDC",
+                "peg": "USD"
+            },
+            "edge": {
+                "addr": "0x6e7a5FAFcec6BB1e78bAE2A1F0B612012BF14827",
+                "token1": {
+                    "name": "MATIC",
+                    "addr": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+                    "decimals": 18,
+                    "peg": null
+                },
+                "token2": {
+                    "name": "USDC",
+                    "addr": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+                    "decimals": 6,
+                    "peg": "USD"
+                },
+                "token1Reserve": "9839449.025417563226109139",
+                "token2Reserve": "16526077.066924",
+                "timestamp": 1648912894,
+                "rateA": 0.997,
+                "rateB": 1,
+                "exchangeID": "quickswap v2 (polygon)"
+            }
+        }
+    ],
+    "optimalVol": 11435.144146979408,
+    "optimalDelta": 26.995760252829886,
+    "swapPrice": 1.004727115865548,
+    "liquidity": 23502752683945.516,
+    "arbFactor": 0.9987148782979768
+}
